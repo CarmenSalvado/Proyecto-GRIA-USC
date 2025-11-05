@@ -25,7 +25,7 @@ router = APIRouter(
 )
 
 
-@router.post("/chat/text", response_model=ChatResponse)
+@router.post("/chat/text", response_model=ChatResponse) #/rag   +   /chat/text   →   /rag/chat/text
 async def get_response_text(request: ChatRequest):
     
     print("POST /rag/chat/text - Pregunta:", request.message)
