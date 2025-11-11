@@ -48,4 +48,3 @@ class ragService:
                 "exito": False,
                 "error": str(e)
             }
-RAG = ragService()

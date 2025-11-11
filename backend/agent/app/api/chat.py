@@ -1,7 +1,9 @@
 from fastapi import APIRouter, File, UploadFile, HTTPException
-from app.service.rag_service import RAG # Importamos la instancia de ragService
+from app.service import rag_service 
 from pydantic import BaseModel
 import uvicorn
+
+RAG = rag_service.ragService()
 
 #Modelos Pydantic para declarar los tipos de request y response
 class ChatRequest(BaseModel):
