@@ -3,6 +3,10 @@ import streamlit as st
 import sys, os
 from PIL import Image
 import base64
+import sounddevice as sd
+import wave
+from io import BytesIO
+import numpy as np
 
 # Asegurarse de que el módulo api se puede importar
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -141,31 +145,84 @@ def render_message(msg):
 
 
 
-# Formulario de entradastreamlit run app.py
-with st.form(key="chat_form", clear_on_submit=True):
-    user_input = st.text_input("Escribe tu pregunta:", "")
-    submit_button = st.form_submit_button("Enviar")
+def numpy_to_wav_bytes(audio_np, samplerate):
+    arr = audio_np
+    if arr.ndim > 1:
+        arr = arr[:, 0]  # tomar primer canal si hay varios
+    if arr.dtype != np.int16:
+        if np.issubdtype(arr.dtype, np.floating):
+            arr = (arr * 32767).astype(np.int16)
+        else:
+            arr = arr.astype(np.int16)
+    bio = BytesIO()
+    with wave.open(bio, "wb") as wf:
+        wf.setnchannels(1)
+        wf.setsampwidth(2)
+        wf.setframerate(samplerate)
+        wf.writeframes(arr.tobytes())
+    bio.seek(0)
+    return bio.getvalue()
 
-# Procesar envío
-if submit_button and user_input:
-    # Guardar mensaje de usuario
-    st.session_state.chat_history.append({"role": "user", "content": user_input})
-    
-    # Llamar API
-    response = chat_api.get_rag_response(user_input)
-    
-    if response:
-        st.session_state.chat_history.append({
-            "role": "rag",
-            "content": response.get("respuesta", "No se obtuvo respuesta"),
-            "sources": response.get("fuentes", [])
-        })
-    else:
-        st.session_state.chat_history.append({
-            "role": "rag",
-            "content": "Ocurrió un error al obtener la respuesta.",
-            "sources": []
-        })
+# Selector de modo
+modo = st.radio("Selecciona el modo de entrada:", ["Texto", "Audio"])
+
+if modo == "Texto":
+    with st.form(key="chat_form", clear_on_submit=True):
+        user_input = st.text_input("Escribe tu pregunta:", "")
+        submit_button = st.form_submit_button("Enviar")
+
+    # Procesar envío de texto
+    if submit_button and user_input:
+        st.session_state.chat_history.append({"role": "user", "content": user_input})
+        response = chat_api.get_rag_response_text(user_input)
+        if response:
+            st.session_state.chat_history.append({
+                "role": "rag",
+                "content": response.get("respuesta", "No se obtuvo respuesta"),
+                "sources": response.get("fuentes", [])
+            })
+        else:
+            st.session_state.chat_history.append({
+                "role": "rag",
+                "content": "Ocurrió un error al obtener la respuesta.",
+                "sources": []
+            })
+
+elif modo == "Audio":
+    st.markdown("### Graba tu pregunta por voz y obtén respuesta del RAG")
+    audio_file = st.audio_input("Pulsa para grabar tu pregunta")
+
+    if audio_file is not None:
+        st.audio(audio_file)
+
+        if st.button("Enviar audio"):
+            st.session_state.chat_history.append({
+                "role": "user",
+                "content": "*Grabación enviada.*"
+            })
+
+            with st.spinner("Transcribiendo audio y generando respuesta..."):
+                audio_file.seek(0)
+                response = chat_api.get_rag_response_audio(audio_file)
+
+            if response:
+                transcripcion = response.get("transcripcion", "")
+                st.session_state.chat_history.append({
+                    "role": "user",
+                    "content": f"*Transcripción:* {transcripcion}"
+                })
+                st.session_state.chat_history.append({
+                    "role": "rag",
+                    "content": response.get("respuesta", "No se obtuvo respuesta"),
+                    "sources": response.get("fuentes", [])
+                })
+            else:
+                st.session_state.chat_history.append({
+                    "role": "rag",
+                    "content": "Error al procesar el audio.",
+                    "sources": []
+                })
+
 
 # Renderizar todo el historial **después** de procesar la entrada
 with chat_container:

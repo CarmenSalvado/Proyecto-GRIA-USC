@@ -16,6 +16,7 @@ def create_app(**kwargs):
             "message": "Bienvenido a la RAG API.",
             "documentation": "Visita /docs para ver los endpoints."
         }
+    
 
     app.include_router(chat.router)
 
