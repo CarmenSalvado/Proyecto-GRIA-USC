@@ -30,6 +30,8 @@ class ragService:
         """Procesa una pregunta y devuelve respuesta con fuentes"""
         try:
             cadena = self.qa_chain({"query": question})
+            print("Soy la pregunta:", question)
+            print("Soy la respuesta:", cadena["result"])
             return {
                 "exito": True,
                 "respuesta": cadena["result"],

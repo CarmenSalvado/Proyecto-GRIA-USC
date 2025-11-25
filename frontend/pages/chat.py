@@ -7,6 +7,7 @@ import sounddevice as sd
 import wave
 from io import BytesIO
 import numpy as np
+from audio_recorder_streamlit import audio_recorder
 
 # Asegurarse de que el módulo api se puede importar
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -190,11 +191,10 @@ if modo == "Texto":
 
 elif modo == "Audio":
     st.markdown("### Graba tu pregunta por voz y obtén respuesta del RAG")
-    audio_file = st.audio_input("Pulsa para grabar tu pregunta")
+    audio_bytes = audio_recorder()
 
-    if audio_file is not None:
-        st.audio(audio_file)
-
+    if audio_bytes:
+        st.audio(audio_bytes, format="audio/wav")
         if st.button("Enviar audio"):
             st.session_state.chat_history.append({
                 "role": "user",
@@ -202,8 +202,7 @@ elif modo == "Audio":
             })
 
             with st.spinner("Transcribiendo audio y generando respuesta..."):
-                audio_file.seek(0)
-                response = chat_api.get_rag_response_audio(audio_file)
+                response = chat_api.get_rag_response_audio(audio_bytes)
 
             if response:
                 transcripcion = response.get("transcripcion", "")

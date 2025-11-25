@@ -2,6 +2,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException
 from app.service.rag_service import RAG # Importamos la instancia de ragService
 from pydantic import BaseModel
 import uvicorn
+from faster_whisper import WhisperModel
 
 #Modelos Pydantic para declarar los tipos de request y response
 class ChatRequest(BaseModel):
@@ -47,60 +48,10 @@ async def get_response_text(request: ChatRequest):
     return respuesta_y_docs
 
 
-'''
-@router.post("/chat/audio")
-async def get_response_audio(audio: UploadFile = File(...)):
-    print("POST /rag/chat/audio")
-    import subprocess, tempfile, os
-
-    # Guardar archivo original (webm/ogg/mp3/etc)
-    with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(audio.filename)[1]) as tmp_in:
-        tmp_in.write(await audio.read())
-        input_path = tmp_in.name
-
-    print(f"Audio recibido: {audio.filename} ({audio.content_type})")
-    print(f"Guardado como: {input_path}")
-
-    # Convertir a WAV con ffmpeg
-    wav_temp = tempfile.NamedTemporaryFile(delete=False, suffix=".wav")
-    wav_path = wav_temp.name
-    wav_temp.close()
-
-    cmd_convert = ["ffmpeg", "-y", "-i", input_path, "-ar", "16000", "-ac", "1", wav_path]
-    conv = subprocess.run(cmd_convert, capture_output=True, text=True)
-
-    if conv.returncode != 0:
-        print("FFMPEG ERROR:", conv.stderr)
-        raise HTTPException(status_code=500, detail="Error convirtiendo audio a WAV")
-
-    print(f"Audio convertido a WAV en: {wav_path}")
-
-    # Transcribir con WhisperTiny
-    cmd = ["ollama", "run", "whisper-tiny", wav_path]
-    result = subprocess.run(cmd, capture_output=True, text=True)
-
-    if result.returncode != 0:
-        raise HTTPException(status_code=500, detail=f"Error en WhisperTiny: {result.stderr}")
-
-    transcripcion = result.stdout.strip()
-    print("Transcripción:", transcripcion)
-
-    # Llamar al RAG
-    response = RAG.get_rag_response(transcripcion)
-
-    if not response["exito"]:
-        raise HTTPException(status_code=500, detail=response["error"])
-
-    return ChatResponse(
-        respuesta=response["respuesta"],
-        fuentes=response["fuentes"]
-    )
-'''
 
 @router.post("/chat/audio")
 async def get_response_audio(audio: UploadFile = File(...)):
     import traceback
-    print("\n--- NUEVA LLAMADA AUDIO ---")
 
     try:
         print("➡ Nombre:", audio.filename)
@@ -134,17 +85,12 @@ async def get_response_audio(audio: UploadFile = File(...)):
         print("➡ WAV creado en:", tmp_wav.name)
 
         # WHISPER
-        cmd2 = ["ollama", "run", "whisper-tiny", tmp_wav.name]
-        print("➡ Whisper cmd:", " ".join(cmd2))
-        whisper = subprocess.run(cmd2, capture_output=True, text=True)
-
-        print("➡ Whisper stdout:", whisper.stdout)
-        print("➡ Whisper stderr:", whisper.stderr)
-
-        if whisper.returncode != 0:
-            raise Exception("Whisper explotó")
-
-        transcripcion = whisper.stdout.strip()
+        asr = WhisperModel("tiny", device="cpu")
+       
+        print("Transcribiendo...")
+        segments, info = asr.transcribe(tmp_wav.name)
+        transcripcion = " ".join([seg.text for seg in segments]).strip()
+        print("He escuchado:", transcripcion)
         print("➡ Transcripción:", transcripcion)
 
         # RAG
