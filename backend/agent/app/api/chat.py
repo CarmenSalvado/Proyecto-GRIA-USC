@@ -85,7 +85,7 @@ async def get_response_audio(audio: UploadFile = File(...)):
         print("➡ WAV creado en:", tmp_wav.name)
 
         # WHISPER
-        asr = WhisperModel("tiny", device="cpu")
+        asr = WhisperModel("small", device="cpu")
        
         print("Transcribiendo...")
         segments, info = asr.transcribe(tmp_wav.name)
@@ -101,6 +101,7 @@ async def get_response_audio(audio: UploadFile = File(...)):
             raise Exception("RAG explotó")
 
         return {
+            "transcripcion": transcripcion,
             "respuesta": response["respuesta"],
             "fuentes": response["fuentes"]
         }
