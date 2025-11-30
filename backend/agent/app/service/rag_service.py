@@ -2,6 +2,7 @@ from langchain.vectorstores import Chroma
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.llms import Ollama
+import os
 
 class ragService:
     def __init__(self):
@@ -10,9 +11,11 @@ class ragService:
         self.embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
         
         self.vectorstore = Chroma(
-            persist_directory="C:\\Users\\22779\\Desktop\\IA\\Proyecto\\Proyecto-GRIA-USC-asr_service\\Proyecto-GRIA-USC-asr_service\\backend\\agent\\app\\service\\chroma_db",
+            persist_directory = ".\\app\\service\\chroma_db",
             embedding_function=self.embeddings
         )
+        print("-------------------------"*10)
+        print("El directorio actual es:", os.getcwd())
         print("-------------------------"*10)
         print("Vectorstore cargado para RAG", len(self.vectorstore))
 
