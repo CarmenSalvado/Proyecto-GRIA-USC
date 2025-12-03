@@ -1,8 +1,10 @@
 from fastapi import APIRouter, File, UploadFile, HTTPException
 from app.service.rag_service import RAG # Importamos la instancia de ragService
+from app.service.metrics_service import metrics_tracker
 from pydantic import BaseModel
 import uvicorn
 from faster_whisper import WhisperModel
+from time import perf_counter
 
 #Modelos Pydantic para declarar los tipos de request y response
 class ChatRequest(BaseModel):
@@ -88,7 +90,10 @@ async def get_response_audio(audio: UploadFile = File(...)):
         asr = WhisperModel("small", device="cpu")
        
         print("Transcribiendo...")
+        start_asr = perf_counter()
         segments, info = asr.transcribe(tmp_wav.name)
+        asr_time = perf_counter() - start_asr
+        metrics_tracker.registrar_asr(asr_time)
         transcripcion = " ".join([seg.text for seg in segments]).strip()
         print("He escuchado:", transcripcion)
         print("➡ Transcripción:", transcripcion)
@@ -110,4 +115,3 @@ async def get_response_audio(audio: UploadFile = File(...)):
         print("ERROR EN BACKEND:")
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
-
