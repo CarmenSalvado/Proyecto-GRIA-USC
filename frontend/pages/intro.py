@@ -11,7 +11,7 @@ st.set_page_config(
 
 # TÍTULO
 st.markdown("<h1 class='title'>Introducción al Proyecto CU5</h1>", unsafe_allow_html=True)
-st.markdown("<p class='subtitle'>Conoce la arquitectura, objetivos y alcance del sistema RAG</p>", unsafe_allow_html=True)
+st.markdown("<p class='subtitle'>Conoce los objetivos y la arquitectura del sistema RAG</p>", unsafe_allow_html=True)
 
 st.write("---")
 
@@ -25,30 +25,37 @@ st.write("""
 """)
 
 # SECCIÓN: ARQUITECTURA DEL SISTEMA
+# SECCIÓN: ARQUITECTURA DEL SISTEMA
 st.subheader("Arquitectura del Sistema")
 st.write("""
-El sistema está compuesto por varias capas:
-1. **Frontend (Streamlit)**: Interfaz de usuario para consultas y visualización.
-2. **API (FastAPI)**: Gestiona las solicitudes entre el frontend y el backend RAG.
-3. **Backend RAG**: Motor de búsqueda y generación de respuestas basado en documentos internos.
-4. **Assets**: Recursos estáticos como logos, imágenes y estilos.
-""")
+El sistema está compuesto por varias capas interconectadas:
 
-# Diagrama de ejemplo (si tienes uno en assets)
-try:
-    diagram = Image.open("assets/arquitectura.png")
-    st.image(diagram, caption="Diagrama de Arquitectura", use_column_width=True)
-except:
-    st.write("Imagen de arquitectura no disponible.")
+1. **Frontend (Streamlit)**:  
+   - Interfaz de usuario donde se realizan consultas y se visualizan respuestas.  
+   - Envía las preguntas del usuario a la API y muestra resultados de manera amigable.  
+   - Dependencias clave: `streamlit`, configuración de temas en `.streamlit/config.toml`.
 
-st.write("---")
+2. **API (FastAPI)**:  
+   - Actúa como intermediario entre el frontend y el backend RAG.  
+   - Expone endpoints como `/rag/chat/text` y `/rag/chat/audio`.  
+   - Valida las solicitudes y formatea las respuestas para el frontend.  
+   - Maneja errores comunes (404, 500, problemas de CORS) y los comunica al usuario.
 
-# SECCIÓN: DOCUMENTACIÓN Y REFERENCIAS
-st.subheader("Documentación y Referencias")
-st.write("""
-- Este proyecto utiliza técnicas de RAG para mejorar la precisión de respuestas.
-- Basado en FastAPI para la lógica de backend.
-- Frontend desarrollado en Streamlit para facilidad de despliegue y pruebas internas.
+3. **Backend RAG (Retriever-Augmented Generation)**:  
+   - Se encarga de buscar información relevante en documentos internos y generar respuestas usando LLM (p. ej., Ollama).  
+   - Componentes principales:
+     - **Vectorstore**: Almacena representaciones vectoriales de documentos para búsqueda rápida.
+     - **LLM (Ollama)**: Genera texto basado en la información recuperada.  
+     - **RAG Chain**: Combina la recuperación de información con la generación de texto.
+   - Persistencia de documentos y configuración de la RAG para asegurar consistencia en las respuestas.
+
+4. **Assets**:  
+   - Contiene recursos estáticos como logos, imágenes, estilos CSS o JSON de configuración visual.
+   - Permite mantener coherencia visual y branding a través del frontend.
+
+**Notas adicionales importantes**:  
+- Asegurarse de que Ollama esté activo y que el puerto configurado en la API coincida con el daemon.  
+- Revisar que dependencias y versiones de `langchain`, `langchain-ollama` y `ollama` sean compatibles para evitar errores de importación o llamadas al LLM.  
 """)
 
 st.write("---")

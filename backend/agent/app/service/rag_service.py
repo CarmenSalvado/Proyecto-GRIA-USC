@@ -14,8 +14,7 @@ class ragService:
             persist_directory = ".\\app\\service\\chroma_db",
             embedding_function=self.embeddings
         )
-        print("-------------------------"*10)
-        print("El directorio actual es:", os.getcwd())
+        
         print("-------------------------"*10)
         print("Vectorstore cargado para RAG", len(self.vectorstore))
 

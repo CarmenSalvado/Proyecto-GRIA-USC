@@ -31,10 +31,10 @@ async def get_response_text(request: ChatRequest):
     
     print("POST /rag/chat/text - Pregunta:", request.message)
 
-    # Llamamos al servicio RAG para obtener la respuesta
+    #Llamamos al servicio RAG para obtener la respuesta
     response = RAG.get_rag_response(request.message)
     
-    # Si falla
+    #Si falla
     if not response["exito"]:
         raise HTTPException(status_code=500, detail=response["error"])
 

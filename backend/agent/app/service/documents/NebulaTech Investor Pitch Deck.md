@@ -1,212 +1,175 @@
-> **NebulaTech–Investor** **PitchDeck(2025)**
->
-> Empowering enterprises to build, deploy, and scale ethical AI.
->
-> **Cover** **&** **Tagline** **NebulaTech**
->
-> AI Consultancy & MLOps Platform Provider *“FromData* *to*
-> *Deployment—Intelligently.”*
->
-> Founded: 2023 Headquarters: Madrid,Spain
->
-> Employees: 62 (as of Nov 2025)
->
-> Focus: Applied AI, MLOps Automation, Responsible AI Consulting
->
-> **The** **Problem**
->
-> Artificial Intelligence adoption is accelerating—yet **80%** **of**
-> **enterprise** **AI** **projects** **fail** **to** **reach**
-> **production**(Gartner, 2025).
->
-> Why?
->
-> • Lack of standardized MLOps pipelines
->
-> • Fragmented data and model management
->
-> • Compliance and governance complexity
->
-> • Shortage of experienced AI engineers
->
-> Businesses need a **trusted** **partner**to bridge strategy and
-> execution —from AI vision to reliable deployment.
->
-> **Our** **Solution**
->
-> NebulaTech provides**end-to-end** **AI** **implementation**combining
-> consulting expertise with proprietary automation tools.
->
-> Core Offerings:
->
-> • **AI** **Strategy** **&** **Consulting:**Align business goals with
-> practical AI applications.
->
-> • **MLOps** **Platform** **(NebulaOps):**Streamlines model
-> development, deployment, andmonitoring.
->
-> • **Data** **Infrastructure** **Services:**Build robust, compliant,
-> and scalable data pipelines.
->
-> • **Custom** **AI** **Solutions:**Tailored LLMs, predictive analytics,
-> and computer vision systems.
->
-> Our hybrid model combines human expertise with in-house technology—
-> acceleratingtime-to-value by up to **60%**.
->
-> **Market** **Opportunity**
->
-> • **Global** **AI** **market** **(2025):**\$310B
->
-> • **Projected** **CAGR** **(2025–2030):**37%
->
-> • **Target** **Segments:**Enterprise clients in fintech, healthcare,
-> manufacturing, and government.
->
-> • **Serviceable** **AvailableMarket** **(SAM):** \$25B(Europe + North
-> America AI consulting+ MLOps tools).
->
-> There is no clear leadercombining**AI** **consulting**with **MLOps**
-> **engineering**— NebulaTech sits at that intersection.
->
-> **Product** **Overview**
->
-> NebulaTech’s product suite supports the full AI lifecycle:
->
-> **Product** **Description** **Status**
->
-> **NebulaOps** End-to-end MLOps automation
->
-> **NebulaFlow** ML workflow orchestration platform
+># NebulaTech – Pitch Deck para Inversores (2025)
 
-Live (v2.0)
+*Empoderando a las empresas para construir, desplegar y escalar IA ética.*
 
-Beta
+---
 
-> **InsightHub** AI observability and reporting dashboards Live
->
-> **PromptLab** LLM fine-tuning and evaluation environment Beta
->
-> **Tech** **Stack:**Python, Kubernetes, FastAPI, PyTorch, MLflow,
-> Snowflake, and AWS/GCP.
->
-> **Integrations:**Hugging Face, Vertex AI, OpenAI,Databricks.
->
-> **Business** **Model**
->
-> Hybrid B2B model combining**consulting** **services**and **SaaS**
-> **subscriptions**.
->
-> • **Consulting:**Custom AI projects (avg. deal size €120K).
->
-> • **SaaS** **Platform:**Subscription-based (ARR ~ €850K).
->
-> • **Support** **&** **Training:**Annual retainer options.
->
-> Target Gross Margin (2026):**68%**
->
-> Revenue Split: **70%** **recurring** **/** **30%** **services**
->
-> **Technology** **&** **Intellectual** **Property**
->
-> NebulaTech owns proprietary codebases for:
->
-> • Workflow orchestration (NebulaFlow)
->
-> • Continuous integration for ML pipelines (NebulaOps)
->
-> • Explainability and drift detection modules
->
-> All codebases are **modular**, **cloud-agnostic**, and developed under
-> secure, auditable controls.
->
-> Patent filings underwayfor:
->
-> • Automated AI audit trails
->
-> • Model explainability metrics visualization
->
-> **Traction** **&** **Clients**
->
-> • **Active** **enterprise** **clients:**18
->
-> • **Average** **project** **duration:**4–6 months
->
-> • **Annual** **Recurring** **Revenue** **(ARR):**€2.3M
->
-> • **Revenue** **growth** **YoY:**+115%
->
-> • **Customer** **retention:**96%
->
-> Notable clients:
->
-> Banco Nova (FinTech),Mediscope AI (Healthcare), Orion Logistics, and a
-> major European energy group.
->
-> Client NPS:**9.3/10**
->
-> **Financial** **Projections** **(2025–2028)**
->
-> **Year** **Revenue** **(€M)** **EBITDA** **Margin** **Clients**
-> **ARR** **(€M)**
->
-> 2025 2.3 12% 18 0.85
->
-> 2026 5.1 18% 32 2.1
->
-> 2027 8.8 26% 50 4.3
->
-> 2028 13.6 30% 75 7.8
->
-> Cash flow positive projected by Q3 2026.
->
-> **Team**
->
-> Founders:
->
-> • **Laura** **Sánchez**–CEO & Co-founder (ex-Google Cloud AI
-> Strategist)
->
-> • **Rafael** **Jiménez**–CTO & Co-founder (ex-DeepMind ML Engineer)
->
-> Leadership Team:
->
-> • Head of Product–Marta López
->
-> • VP of Engineering–Daniel Ortega
->
-> • CISO –Grace Park
->
-> • Head of Data Science –Dr. Michael Tan
->
-> Advisory board includes senior experts fromAWS, IBM, and OpenAI.
->
-> **Roadmap** **&** **Investment** **Ask**
->
-> **Current** **stage:**Post-seed
->
-> **Funding** **to** **date:**€1.8M (angel + early institutional)
-> **Ask:**€5M Series A to accelerate growth
->
-> Use of funds:
->
-> • 40%—Product development (NebulaFlow Enterprise + LLMOps tools)
->
-> • 30%—Sales &marketing (EU and North America expansion)
->
-> • 20%—Talent acquisition
->
-> • 10%—Certifications and compliance
->
-> Milestone goals:
->
-> • Reach €10M ARR by end of 2027
->
-> • Achieve ISO 27001 andSOC 2certifications
->
-> • 100+ enterprise clientsworldwide
->
-> **NebulaTech—Building** **the** **Future** **of** **Responsible**
-> **AI.**
-> [<u>investors@nebulatech.ai</u>](mailto:investors@nebulatech.ai)
-> [<u>https://www.nebulatech.ai</u>](https://www.nebulatech.ai/)
+## Portada y Lema
+
+**NebulaTech**  
+Consultoría de IA y Proveedor de Plataforma MLOps  
+*"De los Datos al Despliegue — Inteligentemente."*
+
+- Fundada: 2023  
+- Sede: Madrid, España  
+- Empleados: 62 (noviembre 2025)  
+- Enfoque: IA aplicada, Automatización MLOps, Consultoría de IA Responsable
+
+---
+
+## El Problema
+
+La adopción de IA está acelerando, pero **el 80% de los proyectos de IA en empresas no llegan a producción** (Gartner, 2025).  
+
+**Causas principales:**
+
+- Falta de pipelines MLOps estandarizados  
+- Gestión de datos y modelos fragmentada  
+- Complejidad en cumplimiento y gobernanza  
+- Escasez de ingenieros de IA experimentados  
+
+Las empresas necesitan un **socio confiable** que conecte estrategia y ejecución, desde la visión de IA hasta el despliegue confiable.
+
+---
+
+## Nuestra Solución
+
+NebulaTech ofrece **implementación de IA de extremo a extremo**, combinando experiencia en consultoría con herramientas de automatización propietarias.
+
+**Ofertas principales:**
+
+- **Estrategia y Consultoría de IA:** Alinea objetivos de negocio con aplicaciones de IA prácticas.  
+- **Plataforma MLOps (NebulaOps):** Optimiza desarrollo, despliegue y monitoreo de modelos.  
+- **Servicios de Infraestructura de Datos:** Construye pipelines de datos robustos, escalables y conformes.  
+- **Soluciones de IA Personalizadas:** LLMs a medida, analítica predictiva y visión por computadora.  
+
+Nuestro modelo híbrido combina experiencia humana con tecnología propia, acelerando el time-to-value hasta en **60%**.
+
+---
+
+## Oportunidad de Mercado
+
+- **Mercado global de IA (2025):** \$310B  
+- **CAGR proyectado (2025–2030):** 37%  
+- **Segmentos objetivo:** Clientes empresariales en fintech, salud, manufactura y gobierno  
+- **Mercado disponible (SAM):** \$25B (Europa + Norteamérica, consultoría de IA + herramientas MLOps)  
+
+No existe un líder claro que combine **consultoría de IA** con **ingeniería MLOps** — NebulaTech se posiciona en esa intersección.
+
+---
+
+## Descripción de Productos
+
+NebulaTech soporta todo el ciclo de vida de la IA:
+
+| Producto | Descripción | Estado |
+|----------|------------|-------|
+| NebulaOps | Automatización MLOps de extremo a extremo | Live v2.0 |
+| NebulaFlow | Plataforma de orquestación de workflows de ML | Beta |
+| InsightHub | Dashboards de observabilidad y reporting de IA | Live |
+| PromptLab | Entorno de fine-tuning y evaluación de LLMs | Beta |
+
+**Stack tecnológico:** Python, Kubernetes, FastAPI, PyTorch, MLflow, Snowflake, AWS/GCP  
+**Integraciones:** Hugging Face, Vertex AI, OpenAI, Databricks
+
+---
+
+## Modelo de Negocio
+
+Modelo híbrido B2B combinando **consultoría** y **suscripciones SaaS**:
+
+- **Consultoría:** Proyectos de IA personalizados (ticket promedio €120K)  
+- **Plataforma SaaS:** Basada en suscripción (ARR ~ €850K)  
+- **Soporte y Capacitación:** Opciones de retainer anual  
+
+**Margen bruto objetivo (2026):** 68%  
+**Distribución de ingresos:** 70% recurrentes / 30% servicios
+
+---
+
+## Tecnología y Propiedad Intelectual
+
+NebulaTech posee código propietario para:
+
+- Orquestación de workflows (NebulaFlow)  
+- Integración continua para pipelines de ML (NebulaOps)  
+- Módulos de explicabilidad y detección de drift  
+
+Todo el código es **modular**, **agnóstico a la nube** y desarrollado bajo controles seguros y auditables.
+
+**Patentes en trámite:**
+
+- Auditorías automáticas de IA  
+- Visualización de métricas de explicabilidad de modelos
+
+---
+
+## Tracción y Clientes
+
+- **Clientes activos:** 18  
+- **Duración promedio de proyecto:** 4–6 meses  
+- **ARR:** €2.3M  
+- **Crecimiento anual de ingresos:** +115%  
+- **Retención de clientes:** 96%  
+
+Clientes destacados: Banco Nova (FinTech), Mediscope AI (Healthcare), Orion Logistics, y un importante grupo energético europeo.  
+**NPS de clientes:** 9.3/10
+
+---
+
+## Proyecciones Financieras (2025–2028)
+
+| Año | Ingresos (€M) | EBITDA | Margen | Clientes | ARR (€M) |
+|-----|---------------|--------|-------|----------|----------|
+| 2025 | 2.3 | 12% | 18 | 0.85 |
+| 2026 | 5.1 | 18% | 32 | 2.1 |
+| 2027 | 8.8 | 26% | 50 | 4.3 |
+| 2028 | 13.6 | 30% | 75 | 7.8 |
+
+Flujo de caja positivo proyectado para Q3 2026.
+
+---
+
+## Equipo
+
+**Fundadores:**
+
+- **Laura Sánchez** – CEO & Co-fundadora (ex-Google Cloud AI Strategist)  
+- **Rafael Jiménez** – CTO & Co-fundador (ex-DeepMind ML Engineer)  
+
+**Equipo Directivo:**
+
+- Head of Product – Marta López  
+- VP de Ingeniería – Daniel Ortega  
+- CISO – Grace Park  
+- Head of Data Science – Dr. Michael Tan  
+
+El consejo asesor incluye expertos senior de AWS, IBM y OpenAI.
+
+---
+
+## Roadmap y Solicitud de Inversión
+
+- **Etapa actual:** Post-seed  
+- **Financiación hasta la fecha:** €1.8M (ángeles + institucional temprano)  
+- **Solicitado:** €5M Serie A para acelerar crecimiento  
+
+**Uso de fondos:**
+
+- 40% — Desarrollo de producto (NebulaFlow Enterprise + herramientas LLMOps)  
+- 30% — Ventas y marketing (expansión EU y Norteamérica)  
+- 20% — Adquisición de talento  
+- 10% — Certificaciones y cumplimiento  
+
+**Objetivos de hitos:**
+
+- Alcanzar €10M ARR a finales de 2027  
+- Obtener certificaciones ISO 27001 y SOC 2  
+- 100+ clientes empresariales a nivel mundial
+
+---
+
+## NebulaTech – Construyendo el Futuro de la IA Responsable
+
+[<u>investors@nebulatech.ai</u>](mailto:investors@nebulatech.ai)  
+[<u>https://www.nebulatech.ai</u>](https://www.nebulatech.ai/)

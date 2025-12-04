@@ -7,6 +7,7 @@ import sounddevice as sd
 import wave
 from io import BytesIO
 import numpy as np
+from streamlit_option_menu import option_menu
 
 # Asegurarse de que el módulo api se puede importar
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -138,10 +139,37 @@ def render_message(msg):
         """
         st.markdown(content_html, unsafe_allow_html=True)
         # Fuentes en desplegable
+        #if msg.get("sources"):
+            #with st.expander("Ver fuentes"):
+                #for src in msg["sources"]:
+                    #st.markdown(f"<div class='source-box'>📄 {src}</div>", unsafe_allow_html=True)
+        # Fuentes en desplegable con formato atractivo
         if msg.get("sources"):
             with st.expander("Ver fuentes"):
                 for src in msg["sources"]:
-                    st.markdown(f"<div class='source-box'>📄 {src}</div>", unsafe_allow_html=True)
+                    content = src.get("content", "")
+                    # Truncar contenido largo
+                    if len(content) > 400:
+                        content = content[:400] + "..."
+                    # Extraer nombre del archivo
+                    filename = src.get("metadata", {}).get("source", "Fuente desconocida").split("\\")[-1]
+
+                    st.markdown(f"""
+                    <div style="
+                        border-left: 4px solid #4B9CD3;
+                        background-color: #f1f5f9;
+                        padding: 10px;
+                        margin-bottom: 8px;
+                        border-radius: 6px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-size: 14px;
+                        line-height: 1.4;
+                        overflow-wrap: break-word;
+                    ">
+                        <strong><img src='data:image/png;base64,{icon_base64}' class='msg-icon' style='width:16px; height:16px; vertical-align:middle;'> {filename}</strong>
+                        <p style='margin-top:5px;'>{content}</p>
+                    </div>
+                    """, unsafe_allow_html=True)
 
 
 
@@ -164,7 +192,14 @@ def numpy_to_wav_bytes(audio_np, samplerate):
     return bio.getvalue()
 
 # Selector de modo
-modo = st.radio("Selecciona el modo de entrada:", ["Texto", "Audio"])
+modo = option_menu(
+    menu_title=None,
+    options=["Texto", "Audio"],
+    icons=["pencil", "mic"],
+    orientation="horizontal"
+)
+
+
 
 if modo == "Texto":
     with st.form(key="chat_form", clear_on_submit=True):
