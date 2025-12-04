@@ -13,9 +13,12 @@ from ragas import evaluate, aevaluate
 from ragas.metrics import answer_relevancy, context_precision, context_recall
 import asyncio
 import concurrent.futures
+import nest_asyncio
+
 
 from app.service.metrics_service import metrics_tracker
 
+nest_asyncio.apply()
 class ragService:
     def __init__(self):
         """Inicializa el servicio RAG con embeddings, vectorstore y chain"""
@@ -150,35 +153,67 @@ class ragService:
 
 
     async def _calcular_ragas_async(self, question: str, answer: str, docs: List):
-        dataset = Dataset.from_list([
-            {
-                "question": question,
-                "answer": answer,
-                "contexts": [doc.page_content for doc in docs],
-                "ground_truth": "\n\n".join(doc.page_content for doc in docs),
-            }
-        ])
+        """Versión asíncrona, protegida con timeout."""
+        try:
+            dataset = Dataset.from_list([
+                {
+                    "question": question,
+                    "answer": answer,
+                    "contexts": [doc.page_content for doc in docs],
+                    "ground_truth": "\n\n".join(doc.page_content for doc in docs),
+                }
+            ])
 
-        resultados = await aevaluate(
-            dataset=dataset,
-            metrics=[answer_relevancy, context_precision, context_recall],
-            llm=self.llm,
-            embeddings=self.embeddings,
-            raise_exceptions=False,
-        )
+            # Timeout duro para que no se quede colgado
+            resultados = await asyncio.wait_for(
+                aevaluate(
+                    dataset=dataset,
+                    metrics=[answer_relevancy, context_precision, context_recall],
+                    llm=self.llm,
+                    embeddings=self.embeddings,
+                    raise_exceptions=False,
+                ),
+                timeout=300  # segundos, ajusta a lo que tenga sentido para ti
+            )
+            print("HOLAGOLALASDLASD")
 
-        return dict(resultados)
+            # En algunas versiones de ragas, resultados tiene _repr_dict
+            if hasattr(resultados, "_repr_dict"):
+                return dict(getattr(resultados, "_repr_dict"))
+            # En otras, se puede castear directamente a dict
+            try:
+                return dict(resultados)
+            except TypeError:
+                return {}
+        except asyncio.TimeoutError:
+            print("[METRICAS] No se pudo calcular RAGAS: timeout")
+            return {}
+        except Exception as ragas_error:
+            print(f"[METRICAS] No se pudo calcular RAGAS: {ragas_error}")
+            return {}
+
 
     def _calcular_ragas(self, question, answer, docs):
+        """Wrapper síncrono: nunca debe romper la petición principal."""
         try:
             loop = asyncio.get_event_loop()
-        except RuntimeError:
-            loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(loop)
 
-        return loop.run_until_complete(
-            self._calcular_ragas_async(question, answer, docs)
-        )
+            # Si el loop ya está corriendo → usamos create_task + awaitable Future
+            if loop.is_running():
+                future = asyncio.ensure_future(
+                    self._calcular_ragas_async(question, answer, docs)
+                )
+                # Creamos un "bloqueo" sincronizado
+                return loop.run_until_complete(asyncio.gather(future))[0]
+
+            # Si no está corriendo, lo manejamos normalmente
+            return loop.run_until_complete(
+                self._calcular_ragas_async(question, answer, docs)
+            )
+
+        except Exception as e:
+            print(f"[METRICAS] Error al ejecutar loop de RAGAS: {e}")
+            return {}
 
 
 RAG = ragService()
