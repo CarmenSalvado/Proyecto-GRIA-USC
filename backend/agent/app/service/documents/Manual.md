@@ -1,39 +1,38 @@
-# Manual del Empleado - NovaTech
+# Employee Handbook - NovaTech
 
-Bienvenido a NovaTech, una empresa dedicada al desarrollo de soluciones tecnológicas innovadoras.
+Welcome to NovaTech, a company dedicated to developing innovative technological solutions.
 
-## 1. Horario de Trabajo
-El horario laboral estándar es de lunes a viernes, de 9:00 AM a 6:00 PM, con una hora de almuerzo entre la 1:00 PM y las 2:00 PM.  
-Se permiten horarios flexibles siempre que se cumpla con el requisito de 8 horas diarias y se coordine con el líder del equipo.
+## 1. Working Hours
+The standard working schedule is Monday to Friday, from 9:00 AM to 6:00 PM, with a one-hour lunch break between 1:00 PM and 2:00 PM.
+Flexible hours are allowed as long as the 8-hour daily requirement is met and coordinated with the team leader.
 
-## 2. Política de Trabajo Remoto
-Los empleados pueden trabajar de forma remota hasta dos días por semana.  
-Las solicitudes de trabajo remoto deben enviarse a través del portal interno y ser aprobadas por el supervisor directo.
+## 2. Remote Work Policy
+Employees may work remotely up to two days per week.
+Remote work requests must be submitted through the internal portal and approved by the direct supervisor.
 
-## 3. Código de Vestimenta
-Se permite un código de vestimenta informal en la oficina, manteniendo una apariencia profesional durante reuniones con clientes o eventos oficiales.
+## 3. Dress Code
+A casual dress code is permitted at the office, maintaining a professional appearance during client meetings or official events.
 
-## 4. Comunicación Interna
-La principal herramienta de comunicación interna es Microsoft Teams.  
-El correo electrónico debe usarse para comunicaciones formales, anuncios importantes o información confidencial.
+## 4. Internal Communication
+The main internal communication tool is Microsoft Teams.
+Emails should be used for formal communications, important announcements, or confidential information.
 
-## 5. Beneficios para Empleados
-NovaTech ofrece los siguientes beneficios:  
-- Seguro de salud privado.  
-- Plan de desarrollo profesional con cursos de formación.  
-- Días adicionales de vacaciones según los años de servicio.
+## 5. Employee Benefits
+NovaTech offers the following benefits:
+- Private health insurance.
+- Professional development plan with training courses.
+- Additional vacation days based on years of service.
 
-## 6. Seguridad y Acceso
-El acceso a las instalaciones de la empresa se gestiona mediante tarjetas de identificación personal.  
-Si se pierde la tarjeta, se debe notificar inmediatamente al departamento de seguridad.
+## 6. Security and Access
+Access to company facilities is managed through personal ID cards.
+If the card is lost, it must be reported immediately to the security department.
 
-## 7. Conducta y Ética
-Se espera que todos los empleados actúen con respeto, integridad y responsabilidad.  
-El uso de lenguaje ofensivo o cualquier forma de discriminación está estrictamente prohibido.
+## 7. Conduct and Ethics
+All employees are expected to act with respect, integrity, and responsibility.
+The use of offensive language or any form of discrimination is strictly prohibited.
 
-## 8. Recursos Adicionales
-El reglamento interno completo y los procedimientos específicos de cada departamento están disponibles en el portal intranet para empleados.
-
+## 8. Additional Resources
+The complete internal regulations and department-specific procedures are available on the employee intranet portal.
 
 
 

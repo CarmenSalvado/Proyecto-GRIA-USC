@@ -1,164 +1,141 @@
-﻿# NebulaTech – Manual del Desarrollador: Mejores Prácticas en Ingeniería AI/ML y MLOps
+﻿**NebulaTech Developer Handbook: AI/ML Engineering & MLOps Best Practices** 
 
----
+**Introduction** 
 
-## Introducción
+At NebulaTech, our developers build intelligent systems that transform how businesses operate. This handbook serves as a foundation for consistent, high-quality AI development across teams. Our engineering culture emphasizes collaboration, reproducibility, and responsible innovation. 
 
-En NebulaTech, nuestros desarrolladores construyen sistemas inteligentes que transforman la manera en que operan las empresas.  
-Este manual sirve como base para un desarrollo de IA consistente y de alta calidad en todos los equipos.  
-Nuestra cultura de ingeniería enfatiza colaboración, reproducibilidad e innovación responsable.
+Core principles: 
 
-**Principios clave:**
+- Clarity over cleverness 
+- Reproducibility over speed 
+- Automation over manual repetition 
+- Shared learning over silos 
 
-- Claridad sobre ingenio  
-- Reproducibilidad sobre velocidad  
-- Automatización sobre repetición manual  
-- Aprendizaje compartido sobre silos
+**Code Standards** 
 
----
+We primarily use Python 3.10+ for AI development. Code should follow PEP8 conventions and be formatted using  black  and  flake8 . Type annotations are mandatory for all production code. 
 
-## Estándares de Código
+Repository structure: 
 
-Usamos principalmente Python 3.10+ para desarrollo de IA.  
-El código debe seguir las convenciones **PEP8** y ser formateado con **black** y **flake8**.  
-Se requieren anotaciones de tipo en todo el código de producción.
+project\_name/ 
 
-**Estructura del repositorio:**
+├── data/ 
 
-project_name/
-├── data/
-├── notebooks/
-├── src/
-│ ├── preprocessing/
-│ ├── models/
-│ └── utils/
-├── tests/
-└── README.md
+├── notebooks/ 
 
+├── src/ 
 
-- Usar **pytest** para testing, con al menos un test por módulo.  
-- Los mensajes de commit deben ser descriptivos, por ejemplo:  
-  `feat(model): agregar clasificador de sentimiento v2`.
+│   ├── preprocessing/ │   ├── models/ 
 
----
+│   └── utils/ 
 
-## Pipelines de Datos
+├── tests/ 
 
-Los datos son la base de todo proyecto de IA. Para asegurar consistencia:
+└── README.md 
 
-- Versionar todos los datasets usando **DVC** o **LakeFS**  
-- Documentar el lineage: rastrear fuentes, transformaciones y propietarios de los datos  
-- Validar datasets con **Great Expectations**  
-- Usar esquemas para detectar drift o campos faltantes temprano
+Use  pytest  for testing, and include at least one test per module. Commit messages should be descriptive, e.g.,  feat(model): add sentiment classifier v2 . 
 
-**Flujo típico:**
+**Data Pipelines** 
 
-1. Ingesta de datos crudos desde fuentes seguras (S3, GCP, Azure)  
-2. Transformación y limpieza en Spark o Pandas  
-3. Registro en feature store (**Feast**)  
-4. Salida versionada almacenada en `/processed/`
+Data is the foundation of every AI project. To ensure consistency: 
 
----
+- Version all datasets using  DVC  or  LakeFS . 
+- Document lineage: track data sources, transformations, and owners. 
+- Validate datasets using  Great Expectations . 
+- Use schemas to detect drift or missing fields early. 
 
-## Desarrollo de Modelos
+Typical flow: 
 
-Cada modelo debe ser reproducible y explicable.  
-Usar **MLflow** para tracking de experimentos y registrar cada modelo entrenado con metadatos:
+1. Raw data ingestion from secure sources (S3, GCP, Azure). 
+1. Transformation and cleaning in Spark or Pandas. 
+1. Feature store registration (Feast). 
+1. Versioned output stored in  /processed/ . 
 
-- Versión del dataset  
-- Hash del commit de código  
-- Hiperparámetros  
-- Métricas de evaluación
+**Model Development** 
 
-**Métricas según tarea:**
+Every model must be reproducible and explainable. Use  MLflow  for experiment tracking and register each trained model with metadata: 
 
-- Clasificación: Precisión, Recall, F1-score, ROC-AUC  
-- Regresión: RMSE, MAE, R²  
-- NLP: BLEU, ROUGE
+- Dataset version 
+- Code commit hash 
+- Hyperparameters 
+- Evaluation metrics 
 
-Se prefieren scripts de entrenamiento modulares sobre notebooks para pipelines de producción.  
-Prototipos de notebooks solo en `/notebooks/experimental/`.
+Evaluation metrics by task: 
 
----
+- Classification: Precision, Recall, F1-score, ROC-AUC 
+- Regression: RMSE, MAE, R² 
+- NLP: BLEU, ROUGE 
 
-## Workflows de MLOps
+Prefer modular training scripts over notebooks for production pipelines. Store notebook prototypes in  /notebooks/experimental/  only. 
 
-MLOps asegura que los sistemas de ML sean estables, escalables y mantenibles.  
-Workflow de NebulaTech:
+**MLOps Workflows** 
 
-1. **Integración Continua (CI)** — Linting, testing y validación de modelos en GitHub Actions  
-2. **Entrega Continua (CD)** — Despliegue automatizado a staging usando **Docker** y **Kubernetes**  
-3. **Registro de Modelos** — Modelos versionados en **MLflow Registry**, promovidos automáticamente tras validación  
-4. **Monitoreo** — Seguimiento de drift de datos, latencia y rendimiento de predicciones con **Prometheus + Grafana**
+MLOps ensures ML systems remain stable, scalable, and maintainable. NebulaTech’s workflow: 
 
-Toda la infraestructura se gestiona con **Terraform**; no se permiten cambios manuales en clusters de producción.
+1. \*\*Continuous Integration (CI)\*\* — Linting, testing, and model validation in GitHub Actions. 
+1. \*\*Continuous Delivery (CD)\*\* — Automated deployment to staging using  Docker  and 
 
----
+   ` `Kubernetes . 
 
-## Infraestructura
+3. \*\*Model Registry\*\* — Versioned models in MLflow Registry, automatically promoted after validation. 
+3. \*\*Monitoring\*\* — Track data drift, latency, and prediction performance via Prometheus + Grafana. 
 
-Todos los proyectos corren en entornos cloud-native con orquestación de contenedores:
+   All infrastructure code lives in Terraform; no manual changes in production clusters. 
 
-- Compute: AWS (EKS), GCP (GKE), Azure (AKS)  
-- Almacenamiento: S3 / GCS / Azure Blob  
-- Despliegue: Charts de Helm en Kubernetes  
-- Logging: ELK Stack (Elasticsearch, Logstash, Kibana)
+   **Infrastructure** 
 
-Se deben usar las imágenes internas de NebulaTech:  
-`nebulatech/python-ml:base` y `nebulatech/mlflow:server`.
+   All projects run on cloud-native environments with container orchestration: 
 
----
+- Compute: AWS (EKS), GCP (GKE), or Azure (AKS) 
+- Storage: S3 / GCS / Azure Blob 
+- Deployment: Kubernetes Helm charts 
+- Logging: ELK Stack (Elasticsearch, Logstash, Kibana) 
 
-## Seguridad y Cumplimiento
+Developers should use NebulaTech’s internal template images: `nebulatech/python- ml:base  and  nebulatech/mlflow:server . 
 
-La seguridad se integra en cada etapa:
+**Security and Compliance** 
 
-- Usar variables de entorno para credenciales (nunca hardcodear)  
-- Encriptar todos los datos en reposo y en tránsito (AES-256, TLS 1.2+)  
-- Aplicar acceso de mínimo privilegio mediante roles IAM  
-- Revisar librerías de terceros trimestralmente para vulnerabilidades  
-- Todos los outputs de modelos deben pasar la auditoría de IA ética de NebulaTech para sesgo, equidad e interpretabilidad
+Security is built into every stage: 
 
----
+- Use environment variables for credentials (never hardcode). 
+- Encrypt all data at rest and in transit (AES-256, TLS 1.2+). 
+- Apply least-privilege access via IAM roles. 
+- Review third-party libraries quarterly for vulnerabilities. 
+- All model outputs must pass NebulaTech’s Ethical AI audit for bias, fairness, and interpretability. 
 
-## Mejores Prácticas
+**Best Practices** 
 
-1. Automatizar todo: CI/CD, testing, validación de datos  
-2. Documentar mientras se programa: docstrings y README  
-3. Revisar peer todos los pull requests antes de mergear  
-4. Contenerizar experimentos para reproducibilidad  
-5. Registrar parámetros y métricas consistentemente  
-6. Preferir servicios gestionados sobre autoalojados, salvo justificación  
-7. Guardar secretos en **Vault** o gestores de secretos en la nube
+1. Automate everything: CI/CD, testing, data validation. 
+1. Write documentation as you code — use docstrings and README files. 
+1. Peer review all pull requests before merging. 
+1. Containerize experiments for reproducibility. 
+1. Log parameters and metrics consistently. 
+1. Prefer managed services over self-hosted ones unless justified. 
+1. Keep secrets in  Vault  or cloud secret managers. 
 
----
+**Common Pitfalls** 
 
-## Errores Comunes
+- Training on stale or unversioned data. 
+- Missing baseline comparisons. 
+- Ignoring class imbalance. 
+- Pushing notebooks directly to production. 
+- Lack of documentation or unclear ownership. 
+- Ignoring model drift alerts. 
 
-- Entrenar con datos obsoletos o no versionados  
-- Faltas de comparaciones baseline  
-- Ignorar desequilibrio de clases  
-- Subir notebooks directamente a producción  
-- Falta de documentación o propiedad poco clara  
-- Ignorar alertas de drift de modelos
+Every failure is a learning opportunity — log retrospectives in Notion for future reference. 
 
-Cada fallo es una oportunidad de aprendizaje — registrar retrospectivas en **Notion**.
+**Resources** 
 
----
+Internal tools: 
 
-## Recursos
+- NebulaFlow (internal MLOps pipeline) 
+- MLflow Registry 
+- Data Portal 
 
-**Herramientas internas:**
+External references: 
 
-- NebulaFlow (pipeline interno de MLOps)  
-- MLflow Registry  
-- Data Portal
+- Google MLOps Whitepaper 
+- AWS Well-Architected ML Lens 
+- DeepLearning.AI MLOps Specialization 
 
-**Referencias externas:**
-
-- Google MLOps Whitepaper  
-- AWS Well-Architected ML Lens  
-- DeepLearning.AI MLOps Specialization
-
-Para preguntas: contactar a `mlops@nebulatech.ai` o revisar el canal **#mlops-support** en Slack.
-
+For questions, contact  mlops@nebulatech.ai  or check the #mlops-support Slack channel. 
