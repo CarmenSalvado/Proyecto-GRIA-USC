@@ -7,6 +7,7 @@ import sounddevice as sd
 import wave
 from io import BytesIO
 import numpy as np
+import time
 
 # Asegurarse de que el módulo api se puede importar
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -192,6 +193,11 @@ elif modo == "Audio":
     st.markdown("### Graba tu pregunta por voz y obtén respuesta del RAG")
     audio_file = st.audio_input("Pulsa para grabar tu pregunta")
 
+    start = time.time()
+
+    # acción: reintentar o avisar al usuario
+
+
     if audio_file is not None:
         st.audio(audio_file)
 
@@ -205,7 +211,10 @@ elif modo == "Audio":
                 response = chat_api.get_rag_response_audio(audio_file)
 
             if response:
+                latencia = time.time() - start
                 transcripcion = response.get("transcripcion", "")
+                if latencia > 1.5 or not transcripcion:
+                    print(f"[RAG-ALERT] ASR_ERROR | latencia = {latencia}, trancripcion = {transcripcion}")
                 st.session_state.chat_history.append({
                     "role": "user",
                     "content": response.get("transcripcion", "No pudo transcribir")
@@ -215,6 +224,12 @@ elif modo == "Audio":
                     "content": response.get("respuesta", "No se obtuvo respuesta"),
                     "sources": response.get("fuentes", [])
                 })
+                audio_path = response.get("audio")
+                if audio_path:
+                    with open(audio_path, "rb") as f:
+                        audio_bytes = f.read()
+                    st.audio(audio_bytes, format="audio/wav")
+                
             else:
                 st.session_state.chat_history.append({
                     "role": "rag",
