@@ -1,331 +1,204 @@
-> **NebulaTech–Interview** **&Hiring** **Guide** **(2025)** *"Hire*
-> *for* *potential.* *Grow* *for* *impact."*
->
-> **Purpose** **of** **this** **Guide**
->
-> This guide helps NebulaTech teams **hire** **consistently,**
-> **fairly,** **and** **intelligently.**
->
-> It defines the company’s philosophy, hiring standards, and
-> step-by-step process to ensure every new hire contributes to our
-> mission: *Responsible* *Intelligence,* *Delivered.*
->
-> **Hiring** **Philosophy**
->
-> At NebulaTech, we hire people —not résumés.
->
-> Our goal is to build **diverse,** **curious,** **and**
-> **mission-driven** **teams**that balance deep technical skill with
-> creativity, integrity, and empathy.
->
-> Core Principles
->
-> 1\. **Hire** **for** **mindset,** **not** **only** **skillset.**
->
-> 2\. **Diversity** **is** **strength.**
->
-> 3\. **Cultural** **contribution** **\>** **cultural** **fit.**
->
-> 4\. **Bias-free** **recruitment.**
->
-> 5\. **Transparency** **and** **respect**at every stage.
->
-> We look for problem solvers who thinkcritically, care deeply, and
-> learnendlessly.
->
-> **The** **NebulaTech** **Talent** **DNA**
->
-> **Attribute**
->
-> **Curiosity**
->
-> **Integrity**
->
-> **Technical**
->
-> **Excellence**
+> # NebulaTech – Guía de Entrevistas y Contratación (2025)
 
-**Description**
+*"Contrata por potencial. Haz crecer por impacto."*
 
-Asks“why” before “how.”
+---
 
-Does the right thing even when unseen.
+## Propósito de esta Guía
 
-Writes clean, scalable,testable
+Esta guía ayuda a los equipos de NebulaTech a **contratar de manera consistente, justa e inteligente**.  
+Define la filosofía de la empresa, los estándares de contratación y el proceso paso a paso para asegurar que cada nueva incorporación contribuya a nuestra misión: *Inteligencia Responsable, Entregada.*
 
-code.
+---
 
-**Why** **it** **Matters**
+## Filosofía de Contratación
 
-Fuels innovation.
+En NebulaTech, contratamos **personas, no currículums**.  
 
-Builds trust with clients.
+Nuestro objetivo es construir **equipos diversos, curiosos y orientados a la misión**, que combinen habilidades técnicas profundas con creatividad, integridad y empatía.
 
-Ensures quality delivery.
+### Principios Clave
 
-> **Attribute**
->
-> **Empathy**
->
-> **Adaptability**
->
-> **Collaboration**
+1. **Contrata por mentalidad, no solo por habilidades.**  
+2. **La diversidad es una fortaleza.**  
+3. **Contribución cultural > encaje cultural.**  
+4. **Reclutamiento libre de sesgos.**  
+5. **Transparencia y respeto** en cada etapa.  
 
-**Description**
+Buscamos solucionadores de problemas que piensen críticamente, se preocupen profundamente y aprendan sin parar.
 
-Understands human impact of AI.
+---
 
-Thrives in change and ambiguity.
+## ADN del Talento NebulaTech
 
-Works cross-functionally and
+| Atributo | Descripción | Por qué importa |
+|----------|------------|----------------|
+| Curiosidad | Pregunta “por qué” antes que “cómo”. | Impulsa la innovación. |
+| Integridad | Hace lo correcto aunque no sea visible. | Genera confianza con los clientes. |
+| Excelencia Técnica | Escribe código limpio, escalable y testeable. | Asegura entregas de calidad. |
+| Empatía | Comprende el impacto humano de la IA. | Alinea con nuestra misión ética. |
+| Adaptabilidad | Prosperar en el cambio y la ambigüedad. | La IA evoluciona rápido, nosotros también. |
+| Colaboración | Trabaja de manera transversal y abierta. | Fomenta la inteligencia colectiva. |
 
-openly.
+---
 
-**Why** **it** **Matters**
+## Flujo de Contratación
 
-Aligns with our ethical mission.
+### Paso 1: Requisición y Definición del Rol
 
-AI evolves fast—so must we.
+- El hiring manager crea la solicitud de puesto en **BambooHR** o **Notion**.  
+- Definir responsabilidades, requisitos obligatorios, deseables y métricas de éxito.  
+- Cada rol se vincula al **Framework de Competencias** (Ingeniería, Datos, Operaciones).
 
-Drives collective
+### Paso 2: Publicación de la Oferta
 
-intelligence.
+- Redactada en lenguaje inclusivo y libre de sesgos.  
+- Publicada en LinkedIn, AIJobs.io, AngelList y la página de Carreras de NebulaTech.  
+- Amplificación social mediante el programa de advocacy de empleados (#WeAreNebula).
 
-> **Hiring** **Workflow** **Overview**
->
-> **Step** **1:** **Requisition** **&** **Role** **Definition**
->
-> • Hiring manager createsjob request in **BambooHR**or**Notion**.
->
-> • Define: responsibilities, must-haves, nice-to-haves, success
-> metrics.
->
-> • Each role links to **Competency** **Framework**(Engineering, Data,
-> Operations).
->
-> **Step** **2:** **Job** **Posting**
->
-> • Written in inclusive, bias-free language.
->
-> • Posted on: LinkedIn, AIJobs.io, AngelList, and NebulaTech Careers
-> page.
->
-> • Social amplification via employee advocacy program (#WeAreNebula).
->
-> **Step** **3:** **Application** **Screening**
->
-> Recruiters screen for:
->
-> • Alignment with NebulaTech values
->
-> • Communication clarity
->
-> • Relevant AI/ML or MLOps experience
->
-> • Potential for growth
->
-> Use structured rubrics—avoid “gut feel.”
->
-> **Step** **4:** **Technical** **Assessment**
->
-> Varies by role but always practical and time-respectful.
->
-> **Role**
->
-> **ML** **Engineer**
->
-> **MLOps** **Specialist**
->
-> **AI** **Consultant**
->
-> **Frontend** **Dev**
->
-> **PM** **/** **Designer**
+### Paso 3: Preselección de Candidatos
 
-**Format**
+Los reclutadores evalúan:
 
-Coding+ model design
+- Alineación con los valores de NebulaTech  
+- Claridad en la comunicación  
+- Experiencia relevante en AI/ML o MLOps  
+- Potencial de crecimiento  
 
-Case study
+Se usan rúbricas estructuradas — evitando decisiones por “intuición”.
 
-Presentation
+### Paso 4: Evaluación Técnica
 
-Live pair programming
+Varía según el rol, siempre práctica y respetando el tiempo.
 
-Scenario interview
+| Rol | Formato | Ejemplo |
+|-----|--------|--------|
+| ML Engineer | Codificación + diseño de modelo | Construir y evaluar un modelo con un dataset pequeño |
+| MLOps Specialist | Estudio de caso | Diseñar despliegue escalable para un modelo |
+| AI Consultant | Presentación | Explicar roadmap de IA a un cliente |
+| Frontend Dev | Programación en pareja | Implementar UI para un dashboard de datos |
+| PM / Designer | Entrevista de escenario | Definir flujo de usuario ético para un sistema de IA |
 
-**Example**
+Se evalúa **enfoque, razonamiento y comunicación**, no solo la corrección.
 
-Build and evaluate model using small dataset
+### Paso 5: Entrevista Conductual
 
-Design scalable deployment for a model
+Panel de 2–3 empleados de NebulaTech utiliza el método **STAR**:
 
-Explain AI roadmap fora client
+- **Situación:** Contexto de la experiencia  
+- **Tarea:** Qué se requería  
+- **Acción:** Qué hicieron  
+- **Resultado:** Qué cambió  
 
-Implement UI for data dashboard
+Se enfoca en colaboración, resolución de conflictos, aprendizaje y ética en la práctica.
 
-Define ethical user flow for AI system
+### Paso 6: Entrevista de Cultura y Valores
 
-> Assess**approach,** **reasoning,** **communication**, not just
-> correctness.
->
-> **Step** **5:** **Behavioral** **Interview**
->
-> Panel (2–3 NebulaTechemployees) uses**STAR**method:
->
-> • **Situation:**Context of experience
->
-> • **Task:**What was required
->
-> • **Action:**What they did
->
-> • **Result:**What changed
->
-> Focus on collaboration, conflict resolution, learning, and ethics in
-> practice.
->
-> **Step** **6:** **Culture** **&** **Values** **Interview**
->
-> Led by a senior employee outside the team.
->
-> Goal: evaluate alignment with NebulaTech’s core values—not
-> personality“fit.”
->
-> Sample Questions:
->
-> • “Tell us about a time you challenged an unethical request.”
->
-> • “How do you balance speed and responsibility in AI work?”
->
-> • “What does collaboration mean to you?”
->
-> **Evaluation** **&** **Decision-Making**
->
-> Scoring Dimensions (1–5 scale):
->
-> 1\. Technical skill
->
-> 2\. Problem-solving
->
-> 3\. Communication clarity
->
-> 4\. Collaboration & humility
->
-> 5\. Value alignment
->
-> Hiring decisions are made by **consensus**, not majority.
->
-> The**Hiring** **Manager**finalizes the offer after HRand leadership
-> review.
->
-> **Offer** **&** **Onboarding**
->
-> • Offers delivered via **DocuSign**+ Slack announcement on acceptance
->
-> • New hires paired with a **Nebula** **Buddy**from another team.
->
-> • First week includes:
->
-> o Company onboarding
->
-> o Security training
->
-> o AI ethics primer
->
-> o Project shadowing
->
-> Every new employee should feel **welcome,** **prepared,** **and**
-> **excited**.
->
-> **Diversity,Equity** **&** **Inclusion** **in** **Hiring** We’re
-> committed to fair, inclusive hiring.
->
-> Actions we take:
->
-> • Use gender-neutral job descriptions.
->
-> • Remove names/photos from CVs in early screening.
->
-> • Diverse panels for final interviews.
->
-> • DEI recruiter training (annual).
->
-> • Track metrics for representation across all teams.
->
-> **Target:**Maintain ≥45%diversity across technical roles by 2026.
->
-> **Employer** **Brand** **&Candidate** **Experience** Candidates =
-> future ambassadors.
->
-> We ensure every applicant, whether hired ornot, has a**positive,**
-> **human** **experience**.
->
-> Principles:
->
-> • Respond within 5 business days.
->
-> • Provide feedback post-interview.
->
-> • Communicate timelines clearly.
->
-> • Celebrate diversity of thought and experience.
->
-> Glassdoor and LinkedIn reviews are monitored quarterly
-> as**CandidateExperience** **KPIs**.
->
-> **Tools** **&** **Systems**
->
-> **Purpose**
->
-> Job postings
->
-> Screening
->
-> Coding tests
+Liderada por un empleado senior fuera del equipo.  
+Objetivo: evaluar alineación con los valores fundamentales de NebulaTech, no el “encaje de personalidad”.
 
-**Tool**
+**Ejemplos de preguntas:**
 
-Workable / Greenhouse
+- “Cuéntanos sobre una vez que desafiaste una solicitud no ética.”  
+- “¿Cómo equilibras velocidad y responsabilidad en proyectos de IA?”  
+- “¿Qué significa para ti la colaboración?”
 
-Notion + Google Sheets
+---
 
-HackerRank / CoderPad
+## Evaluación y Toma de Decisiones
 
-> Communication Slack / Google Meet
->
-> Scheduling
->
-> Onboarding
+**Dimensiones de puntuación (escala 1–5):**
 
-Calendly / Recruitee
+1. Habilidad técnica  
+2. Resolución de problemas  
+3. Claridad en la comunicación  
+4. Colaboración y humildad  
+5. Alineación con valores  
 
-Notion +BambooHR
+Las decisiones se toman por **consenso**, no por mayoría.  
+El **Hiring Manager** finaliza la oferta tras la revisión de HR y liderazgo.
 
-> All data is handled per GDPR & internal privacy policy.
->
-> **Continuous** **Improvement** Hiring is never “done.”
->
-> Every quarter, HR reviews:
->
-> • Interview feedback consistency
->
-> • Candidate diversity
->
-> • Time-to-hire metrics
->
-> • Quality of hire (6-month retention)
->
-> Improvements are documented in **Talent** **OpsNotion** **space**.
->
-> We experiment, iterate, and share learnings openly —like any AI model.
->
-> **Key** **Takeaways**
->
-> Hire people who align with **mission** **+** **potential** **+**
-> **ethics**. Use structured, fair, transparent processes.
->
-> Value collaboration and curiosity as much as code. Measure what
-> matters—diversity, retention, growth.
->
-> “Every person we hire makes NebulaTech more intelligent—not just our
-> systems.”
+---
+
+## Oferta e Incorporación
+
+- Ofertas enviadas vía **DocuSign** + anuncio en Slack tras la aceptación.  
+- Nuevos empleados emparejados con un **Nebula Buddy** de otro equipo.  
+- Primera semana incluye:  
+  - Onboarding corporativo  
+  - Entrenamiento de seguridad  
+  - Introducción a ética de IA  
+  - Shadowing en proyectos  
+
+Cada nuevo empleado debe sentirse **bienvenido, preparado y motivado**.
+
+---
+
+## Diversidad, Equidad e Inclusión en Contratación
+
+Comprometidos con procesos justos e inclusivos:
+
+- Descripciones de trabajo neutras en género  
+- Eliminación de nombres/fotos en CVs en la preselección  
+- Paneles diversos para entrevistas finales  
+- Capacitación anual de reclutadores en DEI  
+- Seguimiento de métricas de representación en todos los equipos  
+
+**Objetivo:** Mantener ≥45% de diversidad en roles técnicos para 2026.
+
+---
+
+## Marca del Empleador y Experiencia del Candidato
+
+Los candidatos son futuros embajadores.  
+Garantizamos que cada postulante tenga una **experiencia positiva y humana**.
+
+**Principios:**
+
+- Responder dentro de 5 días hábiles  
+- Feedback post-entrevista  
+- Comunicar plazos claramente  
+- Celebrar diversidad de pensamiento y experiencia  
+
+Reviews en Glassdoor y LinkedIn se monitorean trimestralmente como KPIs de **Candidate Experience**.
+
+---
+
+## Herramientas y Sistemas
+
+| Propósito | Herramienta |
+|------------|------------|
+| Publicación de ofertas | Workable / Greenhouse |
+| Preselección | Notion + Google Sheets |
+| Pruebas de código | HackerRank / CoderPad |
+| Comunicación | Slack / Google Meet |
+| Programación de entrevistas | Calendly / Recruitee |
+| Onboarding | Notion + BambooHR |
+
+Todos los datos se manejan según GDPR y política interna de privacidad.
+
+---
+
+## Mejora Continua
+
+La contratación nunca está “terminada”.  
+Cada trimestre HR revisa:
+
+- Consistencia de feedback en entrevistas  
+- Diversidad de candidatos  
+- Métricas de tiempo de contratación  
+- Calidad de contratación (retención a 6 meses)  
+
+Las mejoras se documentan en el espacio **Talent Ops Notion**.  
+Se experimenta, itera y comparte aprendizajes abiertamente, como cualquier modelo de IA.
+
+---
+
+## Conclusiones Clave
+
+- Contrata personas alineadas con **misión + potencial + ética**  
+- Usa procesos estructurados, justos y transparentes  
+- Valora la colaboración y curiosidad tanto como el código  
+- Mide lo que importa: diversidad, retención, crecimiento  
+
+*"Cada persona que contratamos hace a NebulaTech más inteligente — no solo nuestros sistemas."*

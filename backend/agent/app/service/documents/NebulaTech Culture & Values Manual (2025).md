@@ -1,179 +1,169 @@
-﻿**NebulaTech – Culture & Values Manual (2025)** 
+﻿# NebulaTech – Manual de Cultura y Valores (2025)
 
-*"Building Responsible Intelligence, Together."*** 
+*"Construyendo Inteligencia Responsable, Juntos."*
 
-**Our Mission** 
+---
 
-NebulaTech exists to **make Artificial Intelligence practical, ethical, and impactful** for every organization. 
+## Nuestra Misión
 
-We help companies build, deploy, and maintain AI responsibly — accelerating innovation while ensuring trust, transparency, and long-term value. 
+NebulaTech existe para **hacer la Inteligencia Artificial práctica, ética e impactante** para cada organización.
 
-**Our Vision** 
+Ayudamos a las empresas a construir, desplegar y mantener IA de manera responsable — acelerando la innovación mientras garantizamos confianza, transparencia y valor a largo plazo.
 
-To become the **most trusted global partner for AI transformation**, where advanced technology meets human-centered design. 
+---
 
-We believe the next generation of intelligence will be **collaborative, transparent, and sustainable** — and we’re building the tools and culture to make that real.
+## Nuestra Visión
 
-**Our Core Values** 
+Convertirnos en el **socio global más confiable en transformación de IA**, donde la tecnología avanzada se une al diseño centrado en las personas.
 
-1. **Integrity Above All** 
+Creemos que la próxima generación de inteligencia será **colaborativa, transparente y sostenible**, y estamos construyendo las herramientas y la cultura para que eso sea realidad.
 
-We do what’s right, not what’s easy. 
+---
 
-Our commitment to responsible AI extends to every decision we make — from data handling to client selection. 
+## Nuestros Valores Fundamentales
 
-2. **Human-Centered Technology** 
+1. **Integridad por Encima de Todo**  
+   Hacemos lo correcto, no lo fácil.  
+   Nuestro compromiso con la IA responsable se extiende a cada decisión, desde el manejo de datos hasta la selección de clientes.
 
-AI should empower people, not replace them.
+2. **Tecnología Centrada en las Personas**  
+   La IA debe empoderar a las personas, no reemplazarlas.  
+   Diseñamos sistemas que amplifican la creatividad humana, la equidad y el bienestar.
 
-We design systems that amplify human creativity, fairness, and wellbeing.
+3. **Aprendizaje Continuo**  
+   El panorama de IA evoluciona a diario.  
+   En NebulaTech, aprender no es opcional — es parte de nuestro ADN.  
+   Apoyamos certificaciones, investigación abierta y mentoría entre pares para todos los miembros del equipo.
 
-3. **Continuous Learning** 
+4. **Colaboración sobre Competencia**  
+   Creemos que las perspectivas diversas producen mejores resultados.  
+   Compartimos, co-creamos y colaboramos — dentro de equipos, con clientes y con la comunidad de IA.
 
-The AI landscape evolves daily. 
+5. **Calidad en Cada Línea**  
+   Desde el código hasta la comunicación, la excelencia importa.  
+   Construimos sistemas confiables, escribimos código limpio y entregamos resultados medibles.
 
-At NebulaTech, learning is not optional — it’s part of our DNA. 
+6. **Responsabilidad desde el Diseño**  
+   Incorporamos ética y gobernanza en nuestra tecnología.  
+   Monitoreo de sesgos, auditorías, explicabilidad — no son características, son fundamentos.
 
-We support certifications, open research, and peer mentoring for all team members. 
+7. **Impacto sobre Hype**  
+   Valoramos resultados tangibles y beneficios sociales sobre palabras de marketing.  
+   Cada proyecto debe generar mejoras medibles para usuarios o la sociedad.
 
-4. **Collaboration Over Competition** 
+---
 
-We believe diverse perspectives produce better outcomes.
+## Nuestros Principios Operativos
 
-We share, co-create, and collaborate — within teams, with clients, and with the AI community. 
+**Transparencia**  
+Compartimos objetivos, feedback y métricas abiertamente.  
+Todos tienen acceso a OKRs trimestrales y dashboards de la empresa.
 
-5. **Quality in Every Line** 
+**Autonomía con Responsabilidad**  
+Cada miembro del equipo tiene la confianza de asumir propiedad de su trabajo.  
+Responsabilidad significa objetivos claros, comunicación abierta y respeto mutuo.
 
-From code to communication, excellence matters.
+**Remote-First, People-First**  
+NebulaTech opera globalmente con flexibilidad híbrida.  
+Nuestro objetivo: empoderar a las personas para que den lo mejor de sí — dondequiera que estén.
 
-We build reliable systems, write clean code, and deliver measurable results.
+**Ética de Datos**  
+Manejamos los datos con estrictos estándares de privacidad y cumplimiento (GDPR, ISO 27001, SOC 2 en progreso).  
+Todos los modelos de IA y conjuntos de datos pasan por revisiones éticas y de seguridad regularmente.
 
-6. **Responsibility by Design** 
+**Diversidad, Equidad e Inclusión**  
+La diversidad es nuestra ventaja.  
+Construimos equipos que reflejan diferentes culturas, géneros, disciplinas y perspectivas.
 
-We embed ethics and governance into our technology.
+- Reclutamiento enfocado en prácticas inclusivas  
+- Auditorías salariales anuales  
+- Programas de mentoría para mujeres y grupos subrepresentados en IA  
+- Política de tolerancia cero ante discriminación o acoso  
 
-Bias monitoring, audit trails, explainability — these are not features, they’re foundations. 
+La diversidad impulsa la innovación — y nos comprometemos a demostrarlo cada día.
 
-7. **Impact Over Hype** 
+---
 
-We value tangible business outcomes and social good over marketing buzzwords. Every project must create measurable improvement for users or society.
+## Aprendizaje y Crecimiento
 
-**Our Operating Principles Transparency** 
+Invertimos fuertemente en nuestro equipo:
 
-We share goals, feedback, and metrics openly.
+| Programa | Descripción | Frecuencia |
+|---------|------------|------------|
+| AI Learning Lab | Capacitación interna en ML, LLMOps y ética | Quincenal |
+| Nebula Mentorship | Emparejamiento de ingenieros junior y senior | Continuo |
+| CertBoost | Apoyo financiero para certificaciones profesionales | Continuo |
+| Tech Talks & Papers | Foro abierto para presentar investigaciones o innovaciones de clientes | Mensual |
 
-Everyone has access to quarterly OKRs and company dashboards.
+El crecimiento profesional en NebulaTech sigue *Impact Tracks* — combinando maestría técnica con capacidad de liderazgo.
 
-**Autonomy with Accountability** 
+---
 
-Each team member is trusted to take ownership.
+## Sostenibilidad e Impacto Social
 
-Accountability means clear objectives, open communication, and mutual respect.
+La IA debe hacer el mundo más sostenible, no más derrochador.
 
-**Remote-First, People-First** 
+Nos comprometemos a:
 
-NebulaTech operates globally with hybrid flexibility. 
+- Operaciones en la nube neutrales en carbono para 2026  
+- Publicar herramientas open-source para IA responsable  
+- Colaborar con ONGs en iniciativas de *data-for-good*  
 
-Our goal: empower people to do their best work — wherever they are. 
+Medimos el progreso anualmente a través del **Nebula Impact Report**, siguiendo KPIs éticos y ambientales.
 
-**Data Ethics** 
+---
 
-We handle data with strict privacy and compliance standards (GDPR, ISO 27001, SOC 2 in progress). 
+## Cultura de Comunicación
 
-All AI models and datasets undergo regular ethical and security reviews.
+Creemos que la claridad es bondad.
 
-**Diversity, Equity & Inclusion** 
+**Principios de comunicación:**
 
-Diversity is our advantage. 
+1. Predeterminar la transparencia.  
+2. Escuchar activamente antes de responder.  
+3. Asumir buenas intenciones.  
+4. Dar feedback temprano, constructivo y privado.  
+5. Celebrar pequeñas victorias, no solo grandes hitos.
 
-We build teams that reflect different cultures, genders, disciplines, and worldviews. 
+**Herramientas usadas:** Slack, Notion, Linear, GitHub, Miro.  
+Las reuniones son cortas, enfocadas y con resultados claros.
 
-- Recruitment focused on inclusive practices
-- Pay equity audits conducted annually
-- Mentorship programs for women and underrepresented groups in AI
-- Zero-tolerance policy for discrimination or harassment
+---
 
-Diversity drives innovation — and we’re committed to proving that every day.
+## Filosofía de Liderazgo
 
-**Learning & Growth** 
+Los líderes en NebulaTech son **servidores, no jefes**.
 
-We invest heavily in our people: 
+Empoderan a otros para crecer, eliminan obstáculos y fomentan la innovación.
 
-**Program  Description  Frequency AI Learning Lab**  Internal training on ML, LLMOps, and ethics  Biweekly 
+Un gran líder aquí:
 
-**Nebula Mentorship** 
+- Enseña, no manda  
+- Valora la empatía tanto como la experiencia  
+- Construye equipos más fuertes que él mismo  
+- Vive los valores de la empresa diariamente
 
-**CertBoost** 
+El liderazgo se mide no por autoridad, sino por impacto y confianza.
 
-**Tech Talks & Papers** 
+---
 
-Pairing junior and senior engineers  Ongoing Financial support for professional certifications 
+## Nuestro Compromiso con la Ética
 
-Annual (AWS, GCP, Kubernetes, etc.) 
+Nos responsabilizamos mediante:
 
-Open forum to present research or client 
+- **AI Ethics Board** — grupo multifuncional que revisa casos de uso de IA  
+- **Auditoría Anual de IA Responsable** — evaluación externa de equidad y cumplimiento  
+- **Reportes de Transparencia de Modelos** — publicados para cada modelo en producción
 
-Monthly 
+Principio guía: *“Si no podemos explicarlo, no lo desplegamos.”*
 
-innovations 
+---
 
-Career growth at NebulaTech follows *Impact Tracks* — combining technical mastery with leadership capability.
+## El Camino NebulaTech
 
-**Sustainability & Social Impact** 
+No se trata solo de tecnología — se trata de cómo la construimos, juntos.
 
-AI should make the world more sustainable, not more wasteful.
+*"Soñamos en grande, permanecemos humildes y nos movemos rápido — sin romper la confianza."*
 
-We commit to: 
-
-- Carbon-neutral cloud operations by 2026
-- Open-sourcing tools for responsible AI 
-- Partnering with NGOs on data-for-good initiatives 
-
-We measure progress annually through the **Nebula Impact Report**, tracking ethical and environmental KPIs. 
-
-**Communication Culture** We believe clarity is kindness. 
-
-Our communication principles: 
-
-1. Default to transparency. 
-1. Listen actively before replying. 
-1. Assume positive intent. 
-1. Give feedback early, constructively, and privately.
-1. Celebrate small wins, not just big milestones.
-
-Tools we use: Slack, Notion, Linear, GitHub, and Miro. Our meetings are short, focused, and have clear outcomes.
-
-**Leadership Philosophy** 
-
-Leaders at NebulaTech are **servants, not bosses**. 
-
-They empower others to grow, remove blockers, and foster innovation.
-
-A great leader here is one who: 
-
-- Coaches, not commands
-- Values empathy as much as expertise
-- Builds teams stronger than themselves
-- Lives the company values daily 
-
-Leadership is measured not by authority, but by impact and trust.
-
-**Our Commitment to Ethics** 
-
-We hold ourselves accountable through:
-
-- **AI Ethics Board** — cross-functional group reviewing AI use cases 
-- **Annual Responsible AI Audit** — third-party evaluation of fairness and compliance 
-- **Model Transparency Reports** — published for each production model
-
-Our guiding principle: *“If we can’t explain it, we don’t deploy it.”* 
-
-**The NebulaTech Way** 
-
-It’s not just about technology — it’s about how we build it, together. 
-
-“We dream big, stay humble, and move fast — without breaking trust.” 
-
-Welcome to NebulaTech. 
-
-Let’s build the future of responsible intelligence.
+Bienvenido a NebulaTech.  
+Construyamos el futuro de la inteligencia responsable.

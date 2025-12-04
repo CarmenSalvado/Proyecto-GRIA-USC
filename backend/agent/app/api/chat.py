@@ -92,10 +92,9 @@ async def get_response_audio(audio: UploadFile = File(...)):
        
         print("Transcribiendo...")
         start_asr = perf_counter()
-        segments, info = asr.transcribe(tmp_wav.name)
+        segments, info = asr.transcribe(tmp_wav.name, language="es")
         asr_time = perf_counter() - start_asr
         metrics_tracker.registrar_asr(asr_time)
-        segments, info = asr.transcribe(tmp_wav.name)
         transcripcion = " ".join([seg.text for seg in segments]).strip()
         print("He escuchado:", transcripcion)
         print("➡ Transcripción:", transcripcion)
@@ -116,5 +115,5 @@ async def get_response_audio(audio: UploadFile = File(...)):
     except Exception as e:
         print("ERROR EN BACKEND:")
         traceback.print_exc()
+        metrics_tracker.registrar_fallo()
         raise HTTPException(status_code=500, detail=str(e))
-

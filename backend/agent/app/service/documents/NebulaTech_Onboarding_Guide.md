@@ -1,130 +1,160 @@
-﻿**NebulaTech Onboarding Guide for New Employees** 
+﻿# NebulaTech – Guía de Incorporación para Nuevos Empleados
 
-**Welcome to NebulaTech** 
+---
 
-Congratulations and welcome to NebulaTech, a leading consultancy specializing in helping organizations design, implement, and maintain Artificial Intelligence solutions. Our mission is simple: make AI practical, ethical, and valuable for every business. 
+## Bienvenido a NebulaTech
 
-This guide will help you understand who we are, how we work, and what to expect during your first months here. Read it carefully—think of it as your navigation map. 
+¡Felicidades y bienvenido a NebulaTech!  
+Somos una consultoría líder especializada en ayudar a organizaciones a diseñar, implementar y mantener soluciones de Inteligencia Artificial.  
+Nuestra misión es simple: hacer que la IA sea práctica, ética y valiosa para cada negocio.
 
-**About NebulaTech** 
+Esta guía te ayudará a entender quiénes somos, cómo trabajamos y qué esperar durante tus primeros meses. Léela con atención: piénsala como tu mapa de navegación.
 
-Founded in 2019 in London, NebulaTech partners with enterprises worldwide to bring applied AI from research to production. Our clients range from small startups to Fortune 500 companies in sectors such as healthcare, finance, retail, and manufacturing. 
+---
 
-Core services: 
+## Acerca de NebulaTech
 
-- AI strategy consulting and road-mapping 
-- Machine Learning model design and deployment 
-- MLOps and Data Engineering infrastructure 
-- Responsible AI governance and ethics advisory 
-- Training and change management programs 
+Fundada en 2019 en Londres, NebulaTech colabora con empresas de todo el mundo para llevar la IA aplicada de la investigación a la producción.  
+Nuestros clientes van desde startups hasta compañías Fortune 500 en sectores como salud, finanzas, retail y manufactura.
 
-Our philosophy: technology empowers people—never replaces them. 
+**Servicios principales:**
 
-**Our Mission and Values** 
+- Consultoría y planificación de estrategia de IA  
+- Diseño y despliegue de modelos de Machine Learning  
+- Infraestructura de MLOps y Data Engineering  
+- Gobernanza de IA responsable y asesoría ética  
+- Programas de formación y gestión del cambio
 
-Mission: To democratize access to Artificial Intelligence through ethical, transparent, and effective consulting. 
+**Nuestra filosofía:** la tecnología empodera a las personas, nunca las reemplaza.
 
-Values: 
+---
 
-1. Integrity first — We operate with honesty and accountability. 
-1. Client success — Your work only matters if it creates measurable value. 
-1. Curiosity — We never stop learning. 
-1. Team before ego — We win as one. 
-1. Ethical AI — We build solutions that respect privacy, fairness, and transparency. 
+## Misión y Valores
 
-**Your First Day** 
+**Misión:** Democratizar el acceso a la Inteligencia Artificial mediante consultoría ética, transparente y efectiva.
 
-Checklist: 
+**Valores:**
 
-- Laptop, ID badge, and system access credentials issued. 
-- Welcome meeting with your manager and buddy. 
-- Review IT Security Policy and Code of Conduct. 
-- Configure email (firstname.lastname@nebulatech.ai). 
-- Log in to Slack, Notion, and Jira. 
+1. Integridad primero — Operamos con honestidad y responsabilidad.  
+2. Éxito del cliente — Tu trabajo importa solo si genera valor medible.  
+3. Curiosidad — Nunca dejamos de aprender.  
+4. Equipo antes que ego — Ganamos como uno solo.  
+5. IA ética — Construimos soluciones que respetan la privacidad, la equidad y la transparencia.
 
-Tips: 
+---
 
-- Join the #introductions channel in Slack to say hello. 
-- Explore our internal portal: nebula-hub.ai/internal. 
-- Ask questions early—everyone remembers their first week. 
+## Tu Primer Día
 
-**The First Month at a Glance** 
+**Checklist:**
 
-Week 1: Orientation & Setup — Access systems, meet team members, understand project pipeline. 
+- Laptop, tarjeta de identificación y credenciales de acceso emitidas  
+- Reunión de bienvenida con tu manager y buddy  
+- Revisión de la Política de Seguridad TI y Código de Conducta  
+- Configuración de correo electrónico (nombre.apellido@nebulatech.ai)  
+- Acceso a Slack, Notion y Jira
 
-Week 2: Learning our processes — Complete AI Ethics training, shadow a client meeting. Week 3: First deliverables — Assist in a data audit or model evaluation task. 
+**Consejos:**
 
-Week 4: Feedback & growth — 1:1 with manager, set OKRs (Objectives & Key Results). 
+- Únete al canal #introductions en Slack para presentarte  
+- Explora nuestro portal interno: [nebula-hub.ai/internal](https://nebula-hub.ai/internal)  
+- Haz preguntas temprano: todos recuerdan su primera semana
 
-**Company Structure** 
+---
 
-NebulaTech is divided into five main divisions: 
+## Primer Mes en Resumen
 
-1. Consulting Services — Client engagement and project delivery. 
-1. Research & Innovation — Develops proprietary AI frameworks. 
-1. Engineering & MLOps — Productizes and deploys models at scale. 
-1. Operations & People — HR, finance, legal, and culture. 
-1. Sales & Marketing — Drives business growth and brand visibility. 
+- **Semana 1:** Orientación y configuración — Acceso a sistemas, conocer al equipo, entender el pipeline de proyectos  
+- **Semana 2:** Aprender nuestros procesos — Completar formación en Ética de IA, acompañar reunión con cliente  
+- **Semana 3:** Primeras entregas — Asistir en auditoría de datos o evaluación de modelos  
+- **Semana 4:** Retroalimentación y crecimiento — 1:1 con manager, establecer OKRs (Objetivos y Resultados Clave)
 
-**Work Environment** 
+---
 
-Schedule: Flexible hours within core time (10 a.m.–4 p.m.) UK/EU zones. Hybrid policy: 3 days remote / 2 days office (optional). 
+## Estructura de la Empresa
 
-Communication: Slack for daily chat, email for formal matters, and Notion for documentation. 
+NebulaTech está dividida en cinco divisiones principales:
 
-Meetings: Weekly stand-ups, bi-weekly retrospectives, and monthly town halls. 
+1. **Servicios de Consultoría** — Interacción con clientes y entrega de proyectos  
+2. **Investigación e Innovación** — Desarrollo de frameworks de IA propietarios  
+3. **Ingeniería y MLOps** — Productización y despliegue de modelos a escala  
+4. **Operaciones y Personas** — RR.HH., finanzas, legal y cultura  
+5. **Ventas y Marketing** — Impulso del crecimiento y visibilidad de la marca
 
-**Performance and Development** 
+---
 
-You’ll set OKRs with your manager every quarter. NebulaTech supports continuous learning through: 
+## Entorno de Trabajo
 
-- Internal workshops and AI bootcamps. 
-- Annual conference stipend (£1 500). 
-- Access to Coursera Enterprise and DeepLearning.AI programs. 
-- Mentorship pairing within your first three months. 
+- **Horario:** Flexible dentro de horario núcleo (10 a.m.–4 p.m.) zonas UK/EU  
+- **Política híbrida:** 3 días remoto / 2 días oficina (opcional)  
+- **Comunicación:** Slack para chat diario, correo electrónico para asuntos formales, Notion para documentación  
+- **Reuniones:** Stand-ups semanales, retrospectivas quincenales y town halls mensuales
 
-**Code of Conduct** 
+---
 
-NebulaTech is an equal-opportunity employer. We expect professionalism, respect, and confidentiality from everyone. Zero tolerance for harassment, discrimination, or misuse of client data. 
+## Desempeño y Desarrollo
 
-Confidential information includes but is not limited to source code, client datasets, strategies, and internal communications. 
+Establecerás OKRs con tu manager cada trimestre. NebulaTech apoya el aprendizaje continuo mediante:
 
-**Tools and Accounts** 
+- Talleres internos y bootcamps de IA  
+- Subvención anual para conferencias (£1,500)  
+- Acceso a Coursera Enterprise y programas de DeepLearning.AI  
+- Mentoría asignada dentro de los primeros tres meses
 
-Communication: Slack, Zoom — Team and client meetings. Documentation: Notion — Internal wiki and project playbooks. Version Control: GitHub Enterprise — Code repositories and reviews. Project Management: Jira — Track sprints and deliverables. Analytics: DataBricks, Snowflake — Data pipelines and storage. MLOps: Kubeflow, MLflow — Model training and deployment. 
+---
 
-**Health, Safety & Well-Being** 
+## Código de Conducta
 
-We believe innovation thrives in a healthy environment. Employees have access to: 
+NebulaTech es un empleador que ofrece igualdad de oportunidades.  
+Esperamos profesionalismo, respeto y confidencialidad.  
+Cero tolerancia a acoso, discriminación o uso indebido de datos de clientes.
 
-- Private health insurance & mental health support. 
-- Flexible working hours and work-from-home stipend. 
-- Annual wellness day off for personal recharge. 
+La información confidencial incluye, pero no se limita a: código fuente, datasets de clientes, estrategias y comunicaciones internas.
 
-**Frequently Asked Questions** 
+---
 
-Q: When do I get paid? 
+## Herramientas y Cuentas
 
-A: Monthly on the 25th via direct deposit. 
+- **Comunicación:** Slack, Zoom — reuniones de equipo y con clientes  
+- **Documentación:** Notion — wiki interna y playbooks de proyectos  
+- **Control de versiones:** GitHub Enterprise — repositorios de código y revisiones  
+- **Gestión de proyectos:** Jira — seguimiento de sprints y entregables  
+- **Analítica:** DataBricks, Snowflake — pipelines y almacenamiento de datos  
+- **MLOps:** Kubeflow, MLflow — entrenamiento y despliegue de modelos
 
-Q: What is NebulaTech’s dress code? 
+---
 
-A: Smart-casual; client meetings require business casual. 
+## Salud, Seguridad y Bienestar
 
-Q: Can I work remotely abroad? 
+La innovación prospera en un entorno saludable.  
+Los empleados tienen acceso a:
 
-A: Up to 30 days per year with manager approval. 
+- Seguro de salud privado y apoyo en salud mental  
+- Horarios de trabajo flexibles y subsidio de teletrabajo  
+- Día anual de bienestar para recargar energías
 
-Q: Who approves expenses? 
+---
 
-A: Your project manager for client costs; Operations for training or equipment. 
+## Preguntas Frecuentes
 
-**Contacts and Resources** 
+- **¿Cuándo me pagan?** Mensualmente, el día 25, mediante depósito directo  
+- **¿Cuál es el código de vestimenta?** Smart-casual; reuniones con clientes requieren business casual  
+- **¿Puedo trabajar desde el extranjero?** Hasta 30 días por año con aprobación del manager  
+- **¿Quién aprueba gastos?** Tu project manager para costes de cliente; Operaciones para formación o equipamiento
 
-HR Lead — Sofia Mendez (sofia.mendez@nebulatech.ai) IT Support — Rahul Patel (it@nebulatech.ai) 
+---
 
-Office Manager — Emily Carter (office@nebulatech.ai) Your Buddy — Assigned in your welcome email. 
+## Contactos y Recursos
 
-**Final Words** 
+- **HR Lead:** Sofia Mendez (sofia.mendez@nebulatech.ai)  
+- **Soporte TI:** Rahul Patel (it@nebulatech.ai)  
+- **Office Manager:** Emily Carter (office@nebulatech.ai)  
+- **Tu Buddy:** Asignado en tu correo de bienvenida
 
-Welcome to NebulaTech. We’re thrilled to have you on board. Your skills will help businesses turn AI dreams into operational reality. Let’s build the future — responsibly, together. 
+---
+
+## Palabras Finales
+
+Bienvenido a NebulaTech.  
+Estamos encantados de tenerte en el equipo.  
+Tus habilidades ayudarán a las empresas a convertir sus sueños de IA en realidad operativa.  
+Construyamos el futuro — responsablemente, juntos.

@@ -6,17 +6,15 @@ from langchain.llms import Ollama
 from typing import Dict, List, Optional
 
 from datasets import Dataset
-import os
 import time
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from time import perf_counter
-from ragas import evaluate, aevaluate
+from ragas import aevaluate
 from ragas.metrics import answer_relevancy, context_precision, context_recall
 import asyncio
-import concurrent.futures
-import nest_asyncio
 from app.service.metrics_service import metrics_tracker
+from langchain.prompts import PromptTemplate
 
 class ragService:
     def __init__(self):
@@ -25,7 +23,8 @@ class ragService:
         self.embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
         
         self.vectorstore = Chroma(
-            persist_directory = ".\\app\\service\\chroma_db",
+            #persist_directory = ".\\app\\service\\chroma_db", #windows
+            persist_directory = "./app/service/chroma_db", #linux
             embedding_function=self.embeddings
         )
 
@@ -44,13 +43,25 @@ class ragService:
 
         self.vectorstore.persist()
         
+        self.template = """Eres un asistente útil que responde SIEMPRE en español NATURAL/FORMAL y de forma concisa.
+                    Usa solo la información del contexto; si falta info, admite que no la tienes.
+                    Contexto:
+                    {context}
+
+                    Pregunta:
+                    {question}
+
+                    Respuesta (en español):"""
+        prompt = PromptTemplate(template=self.template, input_variables=["context", "question"])
+
         
         # Chain de RAG con Ollama
         self.qa_chain = RetrievalQA.from_chain_type(
             llm=self.llm,
             chain_type="stuff", # Mete los 3 chunks en el prompt junto a la pregunta del usuario
             retriever=self.retriever, # Busca los chunks
-            return_source_documents=True # Importante para obtener evidencia
+            return_source_documents=True, # Importante para obtener evidencia
+            chain_type_kwargs={"prompt": prompt} # Le pasamos el prompt para que hable en español y no alucine
         )
        
 
@@ -92,6 +103,7 @@ class ragService:
             try:
                 docs_test = self.vectorstore.similarity_search(question, k=3)
             except Exception as e:
+                metrics_tracker.registrar_fallo()
                 return {"exito": False, "error": "Error generando embeddings del query"}
         
             if len(docs_test) == 0:
@@ -123,8 +135,10 @@ class ragService:
                     print("Se ha pasado el tiempo establecido para la LLM")
 
             except Exception as e:
+                metrics_tracker.registrar_fallo()
                 return {"exito": False, "error": "Error en el retriever o embeddings"}
             if len(cadena) == 0:
+                metrics_tracker.registrar_fallo()
                 print(f"[RAG-ALERT] EMBEDDING_ERROR (la cadena esta vacia)")
             
 
@@ -162,6 +176,7 @@ class ragService:
                     ]
             }
         except Exception as e:
+            metrics_tracker.registrar_fallo()
             return {
                 "exito": False,
                 "error": str(e)
@@ -205,7 +220,7 @@ class ragService:
                     embeddings=self.embeddings,
                     raise_exceptions=False,
                 ),
-                timeout=300  # segundos, ajusta a lo que tenga sentido para ti
+                timeout=550 
             )
 
             # En algunas versiones de ragas, resultados tiene _repr_dict

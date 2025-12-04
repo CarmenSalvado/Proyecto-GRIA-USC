@@ -1,127 +1,96 @@
-﻿**NebulaTech API Documentation: General Guide** 
+﻿
+**Documentación de la API de NebulaTech: Guía General**
 
-This document introduces NebulaTech’s approach to API design, integration, and lifecycle management. 
+Este documento presenta el enfoque de NebulaTech para el diseño de API, integración y gestión del ciclo de vida.
 
-Our APIs enable seamless interoperability between internal systems, client platforms, and AI-powered services. 
+Nuestras APIs permiten una interoperabilidad fluida entre sistemas internos, plataformas de clientes y servicios impulsados por IA.
 
-**Introduction to NebulaTech APIs** 
+**Introducción a las APIs de NebulaTech**
 
-NebulaTech provides RESTful APIs that allow clients to access, integrate, and manage AI services such as data ingestion, model inference, and analytics reporting. 
+NebulaTech proporciona APIs RESTful que permiten a los clientes acceder, integrar y gestionar servicios de IA como ingestión de datos, inferencia de modelos y generación de informes analíticos.
 
-All APIs are versioned, documented, and tested for high availability and scalability.
+Todas las APIs están versionadas, documentadas y probadas para garantizar alta disponibilidad y escalabilidad.
 
-**Architecture and Design Principles** 
+**Arquitectura y Principios de Diseño**
 
-Our APIs follow RESTful conventions with predictable resource-oriented URLs. Responses are returned in JSON format.
+Nuestras APIs siguen convenciones RESTful con URLs orientadas a recursos predecibles. Las respuestas se devuelven en formato JSON.
 
-Design principles: 
+Principios de diseño:
 
-- Stateless communication
-- Consistent naming conventions
-- HTTP verbs aligned with CRUD actions 
-- Clear pagination and filtering 
+- Comunicación sin estado (stateless)
+- Convenciones de nombres consistentes
+- Verbos HTTP alineados con acciones CRUD
+- Paginación y filtrado claros
 
-Base URL example: https://api.nebulatech.ai/v1/
+Ejemplo de URL base: https://api.nebulatech.ai/v1/
 
-**Authentication and Authorization** 
+**Autenticación y Autorización**
 
-NebulaTech APIs use **OAuth 2.0 Bearer Tokens** for authentication. Each token represents a specific user or service identity.
+Las APIs de NebulaTech utilizan **OAuth 2.0 Bearer Tokens** para autenticación. Cada token representa una identidad específica de usuario o servicio.
 
-Tokens are issued by the NebulaTech Identity Provider (IdP) and expire after 24 hours. 
+Los tokens son emitidos por el Proveedor de Identidad de NebulaTech (IdP) y expiran tras 24 horas.
 
-Example header: 
+Ejemplo de encabezado:
 
-Authorization: Bearer <ACCESS\_TOKEN> 
+Authorization: Bearer <ACCESS_TOKEN>
 
-Scopes determine access:
+Los permisos determinan el acceso:
 
-- read:data — read-only access to datasets
-- write:model — allows model upload or retraining 
-- admin:system — full administrative access 
+- read:data — acceso de solo lectura a conjuntos de datos
+- write:model — permite subir o reentrenar modelos
+- admin:system — acceso administrativo completo
 
-**Error Handling and Logging** 
+**Gestión de Errores y Registro**
 
-Errors follow a standardized structure to simplify debugging:
+Los errores siguen una estructura estandarizada para simplificar la depuración:
+{
+"error": {
+"code": 404,
+"message": "Recurso no encontrado",
+"details": "El ID del modelo solicitado no existe."
+}
+}
 
-{ 
+Todas las llamadas a la API se registran en **dashboards centralizados ELK**. Los errores críticos generan alertas automáticas mediante **PagerDuty**.
 
-`  `"error": { 
+**Versionado y Ciclo de Vida**
 
-`    `"code": 404, 
+NebulaTech sigue **versionado semántico** (MAYOR.MENOR.PATCH). Los endpoints obsoletos permanecen disponibles durante 12 meses después del aviso de deprecación. Se espera que los clientes migren proactivamente a la siguiente versión estable.
 
-`    `"message": "Resource not found",
+Ejemplo:
 
-`    `"details": "The requested model ID does not exist."   } 
+- v1.2 → v2.0 introduce cambios incompatibles
+- v2.0 → v2.1 agrega mejoras compatibles
 
-} 
+**Rendimiento y Monitoreo**
 
-All API calls are logged in centralized **ELK dashboards**. Critical errors trigger automated alerts through **PagerDuty**. 
+Todas las APIs están optimizadas para latencias inferiores a **200 ms** en solicitudes estándar. Las herramientas de monitoreo incluyen **Prometheus**, **Grafana** y **OpenTelemetry**.
 
-**Versioning and Lifecycle** 
+Los desarrolladores pueden consultar el estado de la API mediante:
 
-NebulaTech adheres to **semantic versioning** (MAJOR.MINOR.PATCH). Deprecated endpoints remain available for 12 months after deprecation notice. Clients are expected to migrate to the next stable version proactively.
+- /status — tiempo de actividad del sistema y verificaciones de servicio
+- /metrics — datos de rendimiento y rendimiento
 
-Example: 
+**Seguridad y Cumplimiento**
 
-- v1.2 → v2.0 introduces breaking changes 
-- v2.0 → v2.1 adds non-breaking enhancements
+La seguridad es una responsabilidad compartida entre NebulaTech y sus clientes. Aplicamos **TLS 1.2+**, **limitación de tasa de API** y **saneamiento de entradas**. Los datos sensibles de los clientes nunca se almacenan más tiempo del necesario.
 
-**Performance and Monitoring** 
+Las APIs cumplen con:
 
-All APIs are optimized for latency under **200ms** for standard requests. Monitoring tools include **Prometheus**, **Grafana**, and **OpenTelemetry**. 
+- GDPR (Reglamento General de Protección de Datos)
+- ISO 27001 de Seguridad de la Información
+- Estándares SOC 2 Tipo II
 
-Developers can query API health via: 
+**Ejemplo de Uso**
 
-- /status — system uptime and service checks
-- /metrics — performance and throughput data
+Ejemplo cURL:
 
-**Security and Compliance** 
+curl -X POST https://api.nebulatech.ai/v1/model/predict
 
-Security is a shared responsibility between NebulaTech and its clients. We enforce **TLS 1.2+**, **API rate limiting**, and **input sanitization**. Sensitive client data is never stored longer than necessary.
+-H "Authorization: Bearer $TOKEN"
+-H "Content-Type: application/json"
+-d '{"input": [0.5, 0.2, 0.1]}'
 
-APIs comply with: 
 
-- GDPR (General Data Protection Regulation) 
-- ISO 27001 Information Security 
-- SOC 2 Type II standards 
 
-**Example Usage** 
 
-cURL Example: 
-
-curl -X POST https://api.nebulatech.ai/v1/model/predict \   -H "Authorization: Bearer $TOKEN" \ 
-
-`  `-H "Content-Type: application/json" \ 
-
-`  `-d '{"input": [0.5, 0.2, 0.1]}' 
-
-Python Example: import requests 
-
-url = "https://api.nebulatech.ai/v1/model/predict"
-
-headers = { 
-
-`    `"Authorization": f"Bearer {TOKEN}",     "Content-Type": "application/json" 
-
-} 
-
-data = {"input": [0.5, 0.2, 0.1]} 
-
-response = requests.post(url, json=data, headers=headers) print(response.json()) 
-
-**Best Practices** 
-
-- Always use HTTPS endpoints 
-- Handle errors gracefully with retries 
-- Respect API rate limits (default: 1000 requests/minute)
-- Cache static responses when applicable
-- Validate all inputs before sending 
-- Log response codes and latency for analytics
-
-**Support and Contact** 
-
-For technical support, ema[il **api-support@nebulatech.ai** ](mailto:api-support@nebulatech.ai)or open a ticket via the internal portal. 
-
-The API team is available  **Monday–Friday, 9:00–18:00 GMT**. 
-
-Documentation updates are published monthly a[t **https://docs.nebulatech.ai**.](https://docs.nebulatech.ai/) 
