@@ -16,6 +16,10 @@ import asyncio
 from app.service.metrics_service import metrics_tracker
 from langchain.prompts import PromptTemplate
 
+import nest_asyncio
+
+
+nest_asyncio.apply()
 class ragService:
     def __init__(self):
         """Inicializa el servicio RAG con embeddings, vectorstore y chain"""
@@ -44,7 +48,7 @@ class ragService:
         self.vectorstore.persist()
         
         self.template = """Eres un asistente útil que responde SIEMPRE en español NATURAL/FORMAL y de forma concisa.
-                    Usa solo la información del contexto; si falta info, admite que no la tienes.
+                    Usa solo la información del contexto; si falta información, admite que no la tienes.
                     Contexto:
                     {context}
 
@@ -144,6 +148,13 @@ class ragService:
 
             print("Soy la pregunta:", question)
             print("Soy la respuesta:", cadena["result"])
+            #########
+            print("🔍 QUERY:", question)
+            docs_test = self.vectorstore.similarity_search(question, k=5)
+            for i, d in enumerate(docs_test):
+                print(f"TOP {i+1}: sim={cosine_similarity([self.embeddings.embed_query(question)], [self.embeddings.embed_documents([d.page_content])[0]])[0][0]:.3f}")
+                print(d.page_content[:200], "\n")
+
 
             try:
                 answer = cadena["result"]
@@ -216,11 +227,11 @@ class ragService:
                 aevaluate(
                     dataset=dataset,
                     metrics=[answer_relevancy, context_precision, context_recall],
-                    llm=self.llm,
+                    llm=self.llm, #None
                     embeddings=self.embeddings,
                     raise_exceptions=False,
                 ),
-                timeout=550 
+                timeout=300
             )
 
             # En algunas versiones de ragas, resultados tiene _repr_dict
