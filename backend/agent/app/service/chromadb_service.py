@@ -22,7 +22,7 @@ class ChromaDBService:
 
         print("Creando y guardando vectorstore... Esto puede tardar.")
         # Dividir documentos en fragmentos más pequeños
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=400, chunk_overlap=100)
         chunks = text_splitter.split_documents(documentos)
         print(f"Documentos divididos en {len(chunks)} fragmentos")
         

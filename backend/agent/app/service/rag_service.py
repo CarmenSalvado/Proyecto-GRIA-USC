@@ -16,6 +16,7 @@ import asyncio
 from app.service.metrics_service import metrics_tracker
 from langchain.prompts import PromptTemplate
 
+
 import nest_asyncio
 
 
@@ -24,11 +25,11 @@ class ragService:
     def __init__(self):
         """Inicializa el servicio RAG con embeddings, vectorstore y chain"""
         # Embeddings y Vectorstore
-        self.embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+        self.embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
         
         self.vectorstore = Chroma(
-            #persist_directory = ".\\app\\service\\chroma_db", #windows
-            persist_directory = "./app/service/chroma_db", #linux
+            persist_directory = ".\\app\\service\\chroma_db", #windows
+            #persist_directory = "./app/service/chroma_db", #linux
             embedding_function=self.embeddings
         )
 
@@ -149,7 +150,7 @@ class ragService:
             print("Soy la pregunta:", question)
             print("Soy la respuesta:", cadena["result"])
             #########
-            print("🔍 QUERY:", question)
+            print("QUERY:", question)
             docs_test = self.vectorstore.similarity_search(question, k=5)
             for i, d in enumerate(docs_test):
                 print(f"TOP {i+1}: sim={cosine_similarity([self.embeddings.embed_query(question)], [self.embeddings.embed_documents([d.page_content])[0]])[0][0]:.3f}")
