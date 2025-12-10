@@ -7,8 +7,8 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 class ChromaDBService:
     def __init__(self):
         self.embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-        self.doc_path = "./documents"
-        self.persist_directory = "./chroma_db"
+        self.doc_path = "./app/service/documents"
+        self.persist_directory = "./app/service/chroma_db"
         
     def crearDB(self):
         # Cargar documentos desde la carpeta ./documents

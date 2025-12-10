@@ -1,5 +1,6 @@
 import streamlit as st
 from PIL import Image  # para abrir imágenes
+import base64
 
 
 
@@ -18,6 +19,28 @@ st.set_page_config(
     page_icon="assets/icono_BALIDEARAG.png",
     layout="wide"
 )
+
+
+# ---- FONDO CON IMAGEN PNG ----
+def cargar_imagen_base64(ruta):
+    with open(ruta, "rb") as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+fondo_base64 = cargar_imagen_base64("assets/fondo_degradado_azul.png")
+
+st.markdown(f"""
+<style>
+/* Fondo global */
+.stApp {{
+    background: url("data:image/png;base64,{fondo_base64}") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}}
+</style>
+""", unsafe_allow_html=True)
 
 # PERSONALIZACIÓN DE ESTILOS
 st.markdown(

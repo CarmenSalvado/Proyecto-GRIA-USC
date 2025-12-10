@@ -10,8 +10,8 @@ import time
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from time import perf_counter
-from ragas import aevaluate
-from ragas.metrics import answer_relevancy, context_precision, context_recall
+#from ragas import aevaluate
+#from ragas.metrics import answer_relevancy, context_precision, context_recall
 import asyncio
 from app.service.metrics_service import metrics_tracker
 from langchain.prompts import PromptTemplate
