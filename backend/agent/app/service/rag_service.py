@@ -1,26 +1,29 @@
 from __future__ import annotations
+
+import time
+import asyncio
+import numpy as np
+from typing import Dict, List, Optional
+from time import perf_counter
+
 from langchain.vectorstores import Chroma
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.llms import Ollama
-from typing import Dict, List, Optional
-
-from datasets import Dataset
-import time
-import numpy as np
-from sklearn.metrics.pairwise import cosine_similarity
-from time import perf_counter
-#from ragas import aevaluate
-#from ragas.metrics import answer_relevancy, context_precision, context_recall
-import asyncio
-from app.service.metrics_service import metrics_tracker
 from langchain.prompts import PromptTemplate
 
+from sklearn.metrics.pairwise import cosine_similarity
+from datasets import Dataset
+
+from app.service.metrics_service import metrics_tracker
+
+from ragas import aevaluate 
+from ragas.metrics import answer_relevancy, context_precision, context_recall
 
 import nest_asyncio
-
-
 nest_asyncio.apply()
+
+
 class ragService:
     def __init__(self):
         """Inicializa el servicio RAG con embeddings, vectorstore y chain"""
@@ -75,41 +78,20 @@ class ragService:
         """Procesa una pregunta y devuelve respuesta con fuentes"""
         metrics_tracker.registrar_peticion()
         try:
-            start_embeddings = perf_counter()
-            query_embedding = self.embeddings.embed_query(question)
-            embedding_time = perf_counter() - start_embeddings
-            metrics_tracker.registrar_embeddings(embedding_time)
-
-            start_search = perf_counter()
-            source_documents = self.vectorstore.similarity_search_by_vector(query_embedding, k=3)
-            retrieval_time = perf_counter() - start_search
-
-            # Construimos el prompt con los mismos templates que la chain por defecto
-            combine_chain = self.qa_chain.combine_documents_chain
-            prompt_inputs = combine_chain._get_inputs(source_documents, question=question)
-            prompt_value = combine_chain.llm_chain.prompt.format_prompt(**prompt_inputs)
-
             # Llamada al LLM para poder capturar generacion y tokens
             start_llm = perf_counter()
-            llm_result = combine_chain.llm_chain.llm.generate_prompt([prompt_value])
+            cadena = self.qa_chain({"query": question})
             llm_time = perf_counter() - start_llm
             metrics_tracker.registrar_llm(llm_time)
 
-            generation = llm_result.generations[0][0]
-            token_usage = self._extraer_tokens(generation.generation_info)
-            metrics_tracker.registrar_tokens(**token_usage)
+            answer = cadena["result"]
+            docs = cadena["source_documents"]
 
-            respuesta = generation.text
-            ragas_scores = self._calcular_ragas(question, respuesta, source_documents)
+            ragas_scores = self._calcular_ragas(question, answer, docs)
             if ragas_scores:
                 metrics_tracker.registrar_ragas(ragas_scores)
 
-            metrics_tracker.dump(question=question, retrieval_time=retrieval_time)
-            try:
-                docs_test = self.vectorstore.similarity_search(question, k=3)
-            except Exception as e:
-                metrics_tracker.registrar_fallo()
-                return {"exito": False, "error": "Error generando embeddings del query"}
+            docs_test = docs
         
             if len(docs_test) == 0:
                 print("No hay similaridad")
@@ -131,17 +113,6 @@ class ragService:
             except Exception as e:
                 print("Error al comprobar las similitudes de documentos y pregunta")
 
-            try:
-                start = time.time()
-                cadena = self.qa_chain({"query": question})
-                latency = time.time() - start
-
-                if latency > 10: 
-                    print("Se ha pasado el tiempo establecido para la LLM")
-
-            except Exception as e:
-                metrics_tracker.registrar_fallo()
-                return {"exito": False, "error": "Error en el retriever o embeddings"}
             if len(cadena) == 0:
                 metrics_tracker.registrar_fallo()
                 print(f"[RAG-ALERT] EMBEDDING_ERROR (la cadena esta vacia)")
@@ -151,9 +122,8 @@ class ragService:
             print("Soy la respuesta:", cadena["result"])
             #########
             print("QUERY:", question)
-            docs_test = self.vectorstore.similarity_search(question, k=5)
             for i, d in enumerate(docs_test):
-                print(f"TOP {i+1}: sim={cosine_similarity([self.embeddings.embed_query(question)], [self.embeddings.embed_documents([d.page_content])[0]])[0][0]:.3f}")
+                print(f"TOP {i+1}: sim={cosine_similarity([query_vec], [self.embeddings.embed_documents([d.page_content])[0]])[0][0]:.3f}")
                 print(d.page_content[:200], "\n")
 
 
