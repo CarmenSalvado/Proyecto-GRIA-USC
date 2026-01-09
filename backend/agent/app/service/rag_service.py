@@ -122,9 +122,10 @@ class ragService:
             print("Soy la respuesta:", cadena["result"])
             #########
             print("QUERY:", question)
-            for i, d in enumerate(docs_test):
-                print(f"TOP {i+1}: sim={cosine_similarity([query_vec], [self.embeddings.embed_documents([d.page_content])[0]])[0][0]:.3f}")
-                print(d.page_content[:200], "\n")
+            for i, sim in enumerate(sims):
+                print(f"TOP {i+1}: sim={sim:.3f}")
+                print(docs_test[i].page_content[:200], "\n")
+
 
 
             try:
